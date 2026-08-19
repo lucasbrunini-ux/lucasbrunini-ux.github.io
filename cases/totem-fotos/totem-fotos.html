@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOME DO CASE ✦ LUCAS BRUNINI</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
+<style>
+:root{
+  --bg:#0E0E11; --bg2:#15161A; --bg3:#1B1D24;
+  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.22);
+  --txt:#E8E9EC; --mut:#8B8F98;
+  --red:#E53935; --green:#00FF66; --amber:#FFB000;
+  --font-d:'Syne',sans-serif; --font-b:'Inter',sans-serif; --font-m:'Space Mono',monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --chamfer:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--font-b);line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3{font-family:var(--font-d);text-transform:uppercase;letter-spacing:-.01em}
+.mono{font-family:var(--font-m)}
+.noise{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.scanlines{position:fixed;inset:0;z-index:61;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(to bottom, rgba(255,255,255,.022) 0 1px, transparent 1px 3px)}
+
+/* topo */
+.case-top{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid var(--line)}
+.back{font-family:var(--font-m);font-size:.68rem;letter-spacing:.18em;color:var(--mut);transition:color .3s}
+.back:hover{color:var(--red)}
+.logo{font-family:var(--font-m);font-size:.8rem;letter-spacing:.14em}
+.logo b{color:var(--red);font-weight:400}
+
+/* cabeçalho do case */
+.case-head{padding:clamp(50px,7vw,80px) 0 0}
+.case-code{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--red)}
+.case-head h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;line-height:1.02;margin:1rem 0 1.2rem}
+.case-head .desc{color:var(--mut);max-width:40rem;font-size:1.05rem}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border:1px solid var(--line);margin:2.2rem 0 3rem}
+.meta-cell{padding:1rem 1.2rem;border-right:1px solid var(--line);font-family:var(--font-m);font-size:.64rem;letter-spacing:.14em;color:var(--mut)}
+.meta-cell:last-child{border-right:none}
+.meta-cell b{display:block;color:var(--txt);font-weight:400;margin-top:.3rem}
+.meta-cell .g{color:var(--green)}
+@media(max-width:600px){.meta-cell{border-right:none;border-bottom:1px solid var(--line)}}
+
+/* imagem com moldura industrial */
+.media-frame{position:relative;border:1px solid var(--line2);clip-path:var(--chamfer);background:var(--bg2);margin-bottom:2.4rem}
+.media-frame img{width:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+.media-frame::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom, rgba(0,0,0,.12) 0 1px, transparent 1px 4px)}
+.mf-hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:.7rem 1rem;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--green);background:linear-gradient(to bottom, rgba(14,14,17,.85), transparent);z-index:2}
+.mf-hud .r{color:var(--red)}
+
+/* blocos de conteúdo */
+.block{margin-bottom:clamp(48px,6vw,72px)}
+.block-code{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--red);display:block;margin-bottom:.8rem}
+.block h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:1.1rem}
+.block p{color:var(--mut);margin-bottom:1rem;max-width:44rem}
+.block p b{color:var(--txt);font-weight:500}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+.tag{font-family:var(--font-m);font-size:.6rem;letter-spacing:.14em;border:1px solid var(--line);padding:.35rem .7rem;color:var(--mut)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+
+/* navegação entre cases */
+.case-nav{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin:4rem 0}
+.case-nav a{padding:1.6rem 1.4rem;font-family:var(--font-m);font-size:.7rem;letter-spacing:.14em;color:var(--mut);transition:background .3s,color .3s}
+.case-nav a b{display:block;font-family:var(--font-d);font-size:1rem;letter-spacing:.02em;text-transform:uppercase;color:var(--txt);margin-top:.5rem}
+.case-nav a:hover{background:var(--bg2);color:var(--txt)}
+.case-nav a:hover b{color:var(--red)}
+.case-nav a.next{text-align:right;border-left:1px solid var(--line)}
+@media(max-width:600px){.case-nav{grid-template-columns:1fr}.case-nav a.next{border-left:none;border-top:1px solid var(--line);text-align:left}}
+
+/* rodapé */
+footer{border-top:1px solid var(--line2);padding:2.4rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .cta{font-family:var(--font-m);font-size:.7rem;letter-spacing:.16em;background:var(--red);color:#fff;padding:.9rem 1.6rem;clip-path:var(--chamfer);transition:transform .3s var(--ease),background .3s}
+footer .cta:hover{transform:translateY(-3px);background:#D00036}
+footer .info{font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--mut)}
+
+/* animação de entrada */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="wrap case-top">
+  <!-- ⬇️ dois pontos volta porque estamos dentro de /cases/nome/ -->
+  <a class="back" href="../../index.html">← VOLTAR AO ÍNDICE</a>
+  <span class="logo"><b>▮</b> L.BRUNINI</span>
+</header>
+
+<main class="wrap">
+  <div class="case-head">
+    <span class="case-code">// CASE_01 — UX/UI DESIGN</span>
+    <h1>Smartool — Plataforma Web</h1>
+    <p class="desc">Descrição de 1–2 frases sobre o projeto: o contexto, seu papel e o impacto gerado. Escreva como um resumo executivo.</p>
+
+    <div class="meta-grid">
+      <div class="meta-cell">CLIENTE<b>SMARTOOL TECNOLOGIA</b></div>
+      <div class="meta-cell">PAPEL<b>UX/UI DESIGNER</b></div>
+      <div class="meta-cell">ANO<b>2024 — ATUAL</b></div>
+      <div class="meta-cell">STATUS<b class="g">● EM CURSO</b></div>
+    </div>
+  </div>
+
+  <div class="media-frame reveal">
+    <img src="capa.jpg" alt="Capa do projeto">
+    <span class="mf-hud"><span>CASE_01 // CAPA_PRINCIPAL</span><span class="r">REC ●</span></span>
+  </div>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_A</span>
+    <h2>O desafio</h2>
+    <p>Descreva aqui o problema que precisava ser resolvido. Qual era a dor do usuário ou do negócio? Use dados se possível: <b>"o onboarding tinha 60% de abandono"</b>, por exemplo.</p>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_B</span>
+    <h2>O processo</h2>
+    <p>Conte como você trabalhou: pesquisa, personas, wireframes, testes de usabilidade, iterações. Mostre seu raciocínio — recrutadores valorizam mais o processo que a imagem final.</p>
+    <div class="tags"><span>PESQUISA</span><span>WIREFRAMES</span><span>PROTÓTIPOS</span><span>TESTES</span></div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_C</span>
+    <h2>A solução</h2>
+    <div class="grid-2">
+      <div class="media-frame"><img src="detalhe-01.jpg" alt="Tela de detalhe 1"></div>
+      <div class="media-frame"><img src="detalhe-02.jpg" alt="Tela de detalhe 2"></div>
+    </div>
+    <p>Apresente as telas e decisões de design. Explique o porquê de cada escolha: hierarquia, acessibilidade, componentes do design system.</p>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_D</span>
+    <h2>Resultados</h2>
+    <p>Feche com impacto mensurável: <b>+38% de conversão</b>, <b>-40% de chamados de suporte</b>, ou aprendizados importantes se o projeto ainda estiver em andamento.</p>
+  </section>
+
+  <nav class="case-nav reveal">
+    <a href="../case-anterior/index.html">← CASE ANTERIOR<b>Nome do Case Anterior</b></a>
+    <a class="next" href="../proximo-case/index.html">PRÓXIMO CASE →<b>Nome do Próximo Case</b></a>
+  </nav>
+</main>
+
+<footer class="wrap">
+  <span class="info">© 2025 LUCAS BRUNINI — SÃO PAULO // BR</span>
+  <a class="cta" href="mailto:brunini.lucas@gmail.com">VAMOS CONVERSAR ↗</a>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
