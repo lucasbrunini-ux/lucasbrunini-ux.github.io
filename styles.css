@@ -101,39 +101,6 @@ h4 {
   background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 3px);
 }
 
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 8px;
-  background: var(--red);
-  z-index: 120;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s var(--ease), height 0.25s var(--ease), background 0.25s, border 0.25s;
-  display: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  body,
-  a,
-  button {
-    cursor: none;
-  }
-
-  .cursor {
-    display: block;
-  }
-
-  .cursor.grow {
-    width: 42px;
-    height: 42px;
-    background: transparent;
-    border: 1px solid var(--red);
-  }
-}
-
 #preloader {
   position: fixed;
   inset: 0;
@@ -731,6 +698,25 @@ body.loaded .hero-title .line > span {
   color: var(--mut);
 }
 
+.sec-head:not(.sec-head--about) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0;
+}
+
+.sec-head:not(.sec-head--about) h2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.sec-head:not(.sec-head--about) .sec-meta {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: start;
+  margin-top: 20px;
+}
+
 .sec-head--about .sec-meta {
   margin-top: 0.5rem;
 }
@@ -890,18 +876,18 @@ body.loaded .hero-title .line > span {
   font-size: 0.78rem;
 }
 
-.project-status {
+.project-type {
   font-family: var(--font-m);
   font-size: 0.58rem;
   letter-spacing: 0.12em;
   text-align: right;
 }
 
-.project-status .g {
+.project-type .project {
   color: var(--green);
 }
 
-.project-status .a {
+.project-type .study {
   color: var(--amber);
 }
 
