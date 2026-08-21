@@ -3,157 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOME DO CASE ✦ LUCAS BRUNINI</title>
+<title>TOTEM DE FOTOS INTERATIVO ✦ LUCAS BRUNINI</title>
+<meta name="description" content="Case study: Totem de Fotos Interativo — UX/UI, Product Design e Design Gráfico para ativações de marca em eventos.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
-<style>
-:root{
-  --bg:#0E0E11; --bg2:#15161A; --bg3:#1B1D24;
-  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.22);
-  --txt:#E8E9EC; --mut:#8B8F98;
-  --red:#E53935; --green:#00FF66; --amber:#FFB000;
-  --font-d:'Syne',sans-serif; --font-b:'Inter',sans-serif; --font-m:'Space Mono',monospace;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --chamfer:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:var(--font-b);line-height:1.65;-webkit-font-smoothing:antialiased}
-::selection{background:var(--red);color:#fff}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
-h1,h2,h3{font-family:var(--font-d);text-transform:uppercase;letter-spacing:-.01em}
-.mono{font-family:var(--font-m)}
-.noise{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.scanlines{position:fixed;inset:0;z-index:61;pointer-events:none;opacity:.5;
-  background:repeating-linear-gradient(to bottom, rgba(255,255,255,.022) 0 1px, transparent 1px 3px)}
-
-/* topo */
-.case-top{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid var(--line)}
-.back{font-family:var(--font-m);font-size:.68rem;letter-spacing:.18em;color:var(--mut);transition:color .3s}
-.back:hover{color:var(--red)}
-.logo{font-family:var(--font-m);font-size:.8rem;letter-spacing:.14em}
-.logo b{color:var(--red);font-weight:400}
-
-/* cabeçalho do case */
-.case-head{padding:clamp(50px,7vw,80px) 0 0}
-.case-code{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--red)}
-.case-head h1{font-size:clamp(2rem,6vw,4rem);font-weight:800;line-height:1.02;margin:1rem 0 1.2rem}
-.case-head .desc{color:var(--mut);max-width:40rem;font-size:1.05rem}
-.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border:1px solid var(--line);margin:2.2rem 0 3rem}
-.meta-cell{padding:1rem 1.2rem;border-right:1px solid var(--line);font-family:var(--font-m);font-size:.64rem;letter-spacing:.14em;color:var(--mut)}
-.meta-cell:last-child{border-right:none}
-.meta-cell b{display:block;color:var(--txt);font-weight:400;margin-top:.3rem}
-.meta-cell .g{color:var(--green)}
-@media(max-width:600px){.meta-cell{border-right:none;border-bottom:1px solid var(--line)}}
-
-/* imagem com moldura industrial */
-.media-frame{position:relative;border:1px solid var(--line2);clip-path:var(--chamfer);background:var(--bg2);margin-bottom:2.4rem}
-.media-frame img{width:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
-.media-frame::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom, rgba(0,0,0,.12) 0 1px, transparent 1px 4px)}
-.mf-hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:.7rem 1rem;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--green);background:linear-gradient(to bottom, rgba(14,14,17,.85), transparent);z-index:2}
-.mf-hud .r{color:var(--red)}
-
-/* blocos de conteúdo */
-.block{margin-bottom:clamp(48px,6vw,72px)}
-.block-code{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--red);display:block;margin-bottom:.8rem}
-.block h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:1.1rem}
-.block p{color:var(--mut);margin-bottom:1rem;max-width:44rem}
-.block p b{color:var(--txt);font-weight:500}
-.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.tag{font-family:var(--font-m);font-size:.6rem;letter-spacing:.14em;border:1px solid var(--line);padding:.35rem .7rem;color:var(--mut)}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
-@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
-
-/* navegação entre cases */
-.case-nav{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin:4rem 0}
-.case-nav a{padding:1.6rem 1.4rem;font-family:var(--font-m);font-size:.7rem;letter-spacing:.14em;color:var(--mut);transition:background .3s,color .3s}
-.case-nav a b{display:block;font-family:var(--font-d);font-size:1rem;letter-spacing:.02em;text-transform:uppercase;color:var(--txt);margin-top:.5rem}
-.case-nav a:hover{background:var(--bg2);color:var(--txt)}
-.case-nav a:hover b{color:var(--red)}
-.case-nav a.next{text-align:right;border-left:1px solid var(--line)}
-@media(max-width:600px){.case-nav{grid-template-columns:1fr}.case-nav a.next{border-left:none;border-top:1px solid var(--line);text-align:left}}
-
-/* rodapé */
-footer{border-top:1px solid var(--line2);padding:2.4rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-footer .cta{font-family:var(--font-m);font-size:.7rem;letter-spacing:.16em;background:var(--red);color:#fff;padding:.9rem 1.6rem;clip-path:var(--chamfer);transition:transform .3s var(--ease),background .3s}
-footer .cta:hover{transform:translateY(-3px);background:#D00036}
-footer .info{font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--mut)}
-
-/* animação de entrada */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="noise" aria-hidden="true"></div>
 <div class="scanlines" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<header class="wrap case-top">
-  <!-- ⬇️ dois pontos volta porque estamos dentro de /cases/nome/ -->
-  <a class="back" href="../../index.html">← VOLTAR AO ÍNDICE</a>
-  <span class="logo"><b>▮</b> L.BRUNINI</span>
+<span class="plus tl">+</span><span class="plus tr">+</span><span class="plus bl">+</span><span class="plus br">+</span>
+
+<header>
+  <div class="wrap case-top">
+    <a class="back" href="../../index.html"><i>←</i> VOLTAR AO ÍNDICE</a>
+    <a class="logo" href="../../index.html"><b></b> L.BRUNINI</a>
+  </div>
 </header>
 
 <main class="wrap">
-  <div class="case-head">
-    <span class="case-code">// CASE_01 — UX/UI DESIGN</span>
-    <h1>Smartool — Plataforma Web</h1>
-    <p class="desc">Descrição de 1–2 frases sobre o projeto: o contexto, seu papel e o impacto gerado. Escreva como um resumo executivo.</p>
+  <!-- HERO -->
+  <div class="case-hero">
+    <span class="case-code">// CASE_06 — UX/UI · PRODUCT DESIGN · DESIGN GRÁFICO</span>
+    <h1>Totem de Fotos Interativo</h1>
+    <p class="desc">Solução que une tecnologia e design para transformar a interação do público com marcas em vivências únicas e memoráveis em eventos corporativos e culturais.</p>
 
     <div class="meta-grid">
-      <div class="meta-cell">CLIENTE<b>SMARTOOL TECNOLOGIA</b></div>
-      <div class="meta-cell">PAPEL<b>UX/UI DESIGNER</b></div>
-      <div class="meta-cell">ANO<b>2024 — ATUAL</b></div>
-      <div class="meta-cell">STATUS<b class="g">● EM CURSO</b></div>
+      <div class="meta-cell">CLIENTE<b>SMARTOOL</b></div>
+      <div class="meta-cell">PAPEL<b>UX/UI · PRODUCT · GRÁFICO</b></div>
+      <div class="meta-cell">ANO<b>2024</b></div>
+      <div class="meta-cell">STATUS<b class="g">● SHIPPED</b></div>
     </div>
   </div>
 
+  <!-- CAPA -->
   <div class="media-frame reveal">
-    <img src="capa.jpg" alt="Capa do projeto">
-    <span class="mf-hud"><span>CASE_01 // CAPA_PRINCIPAL</span><span class="r">REC ●</span></span>
+    <img src="https://image.qwenlm.ai/public_source/5bad0ea8-3e60-4539-812d-d60d10ae8850/15b5a1984-0b27-4669-b054-443dd1ac9f0b.png" alt="Totem de fotos interativo em evento corporativo">
+    <span class="mf-hud"><span>CASE_06 // CAPA_PRINCIPAL</span><span class="r">REC ●</span></span>
   </div>
 
+  <!-- SOBRE -->
   <section class="block reveal">
     <span class="block-code">// SEC_A</span>
-    <h2>O desafio</h2>
-    <p>Descreva aqui o problema que precisava ser resolvido. Qual era a dor do usuário ou do negócio? Use dados se possível: <b>"o onboarding tinha 60% de abandono"</b>, por exemplo.</p>
+    <h2>Sobre o projeto</h2>
+    <p>O projeto consiste no desenvolvimento de <b>totens de fotos interativos</b>, soluções que unem tecnologia e design para proporcionar momentos memoráveis. O objetivo principal é transformar a interação do público com marcas ou temáticas em uma vivência única e envolvente.</p>
+    <p>Minha atuação cobriu <b>todo o processo de concepção</b>, desde a pesquisa e criação de personas até o design final das interfaces e personalização de marca — atuando como UX/UI Designer, Product Designer e Designer Gráfico.</p>
+    <div class="tags"><span>FIGMA</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>AFTER EFFECTS</span><span>PREMIERE PRO</span><span>NOTION</span></div>
   </section>
 
+  <!-- PROBLEMA -->
   <section class="block reveal">
     <span class="block-code">// SEC_B</span>
-    <h2>O processo</h2>
-    <p>Conte como você trabalhou: pesquisa, personas, wireframes, testes de usabilidade, iterações. Mostre seu raciocínio — recrutadores valorizam mais o processo que a imagem final.</p>
-    <div class="tags"><span>PESQUISA</span><span>WIREFRAMES</span><span>PROTÓTIPOS</span><span>TESTES</span></div>
+    <h2>Problema identificado</h2>
+    <p>Muitas ativações de marca em eventos carecem de uma <b>conexão emocional</b> ou de uma forma tangível e compartilhável de recordação, resultando em interações passageiras e baixo engajamento pós-evento.</p>
   </section>
 
+  <!-- OBJETIVOS -->
   <section class="block reveal">
     <span class="block-code">// SEC_C</span>
-    <h2>A solução</h2>
-    <div class="grid-2">
-      <div class="media-frame"><img src="detalhe-01.jpg" alt="Tela de detalhe 1"></div>
-      <div class="media-frame"><img src="detalhe-02.jpg" alt="Tela de detalhe 2"></div>
-    </div>
-    <p>Apresente as telas e decisões de design. Explique o porquê de cada escolha: hierarquia, acessibilidade, componentes do design system.</p>
+    <h2>Objetivos do projeto</h2>
+    <ul>
+      <li>Fortalecer a conexão emocional entre o público e a marca/personagem</li>
+      <li>Proporcionar uma interface intuitiva que garanta uma interação rápida e satisfatória</li>
+      <li>Gerar conteúdos compartilháveis que ampliem o alcance da experiência</li>
+    </ul>
   </section>
 
+  <!-- PROCESSO -->
   <section class="block reveal">
     <span class="block-code">// SEC_D</span>
-    <h2>Resultados</h2>
-    <p>Feche com impacto mensurável: <b>+38% de conversão</b>, <b>-40% de chamados de suporte</b>, ou aprendizados importantes se o projeto ainda estiver em andamento.</p>
+    <h2>Processo de design</h2>
+    <p>Para o desenvolvimento do projeto, foram estabelecidas <b>quatro fases de concepção</b> cuidadosamente percorridas utilizando a técnica do <b>Diamante Duplo</b>:</p>
+
+    <!-- FASE 1: DESCOBRIR -->
+    <div class="phase" data-phase="PHASE_01 // DESCOBRIR">
+      <h3>Descobrir</h3>
+      <p>A fase inicial envolveu investigação dos problemas e geração de ideias, focando em como os totens podem enriquecer a experiência do visitante.</p>
+      
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">BENCHMARK</h4>
+      <p>Foram analisadas soluções de entretenimento interativo em eventos empresariais e culturais para entender os padrões de interação e expectativa do público e dos clientes. Foram também analisados aplicações do gênero visando entender a tendência do mercado.</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">MATRIZ CSD</h4>
+      <div class="csd">
+        <div class="csd-cell">
+          <h4><i>●</i> CERTEZAS</h4>
+          <p>O público quer uma recordação física e imediata do evento</p>
+          <p>A interface precisa ser extremamente simples para evitar filas</p>
+          <p>O totem será utilizado por públicos de diferentes idades</p>
+        </div>
+        <div class="csd-cell">
+          <h4><i>●</i> SUPOSIÇÕES</h4>
+          <p>Os utilizadores preferem tirar fotos com "ídolos" específicos</p>
+          <p>A coleta de e-mail na tela final gera desistência se o teclado for complexo</p>
+          <p>O compartilhamento via QR Code é mais importante que impressão para jovens</p>
+        </div>
+        <div class="csd-cell">
+          <h4><i>●</i> DÚVIDAS</h4>
+          <p>Os usuários entendem que precisam escanear o QR Code antes de sair?</p>
+          <p>Como sinalizar fisicamente no móvel onde a foto impressa será retirada?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 2: DEFINIR -->
+    <div class="phase" data-phase="PHASE_02 // DEFINIR">
+      <h3>Definir</h3>
+      <p>A interação deve ser dinâmica e o fluxo deve ser o mais objetivo possível para atender públicos diversos.</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">FLUXO DE USUÁRIO</h4>
+      <p style="font-family:var(--font-m);font-size:.85rem;color:var(--green);letter-spacing:.08em">Tela Inicial → Seleção de Personagem → Momento da Foto → Confirmação → Pagamento (se houver) → Conclusão</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">PERSONAS</h4>
+      
+      <div class="persona" data-code="P_01">
+        <h4>Cláudia Ramos</h4>
+        <span class="role">36 ANOS · COORDENADORA DE MARKETING</span>
+        <div class="persona-grid">
+          <div><b>OBJETIVOS</b>Criar ativações de marca e engajar eventos corporativos</div>
+          <div><b>COMPORTAMENTOS</b>Gosta de soluções tecnológicas que gerem impacto visual</div>
+          <div><b>FRUSTRAÇÕES</b>Ferramentas com pouca personalização</div>
+          <div><b>NECESSIDADES</b>Personalização visual e funcional, boa coleta de dados</div>
+          <div><b>MOTIVAÇÕES</b>Criar experiências inovadoras que conectem emocionalmente</div>
+        </div>
+      </div>
+
+      <div class="persona" data-code="P_02">
+        <h4>Eduardo Tavares</h4>
+        <span class="role">29 ANOS · PRODUTOR CULTURAL</span>
+        <div class="persona-grid">
+          <div><b>OBJETIVOS</b>Transformar exposições em experiências imersivas</div>
+          <div><b>COMPORTAMENTOS</b>Busca ideias criativas que atraiam jovens e famílias</div>
+          <div><b>FRUSTRAÇÕES</b>Equipamentos engessados, desorganização</div>
+          <div><b>NECESSIDADES</b>Aplicação fácil de transportar e instalar</div>
+          <div><b>MOTIVAÇÕES</b>Encantar o público e ampliar o alcance das experiências</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FASE 3: DESENVOLVER -->
+    <div class="phase" data-phase="PHASE_03 // DESENVOLVER">
+      <h3>Desenvolver</h3>
+      <p>O conceito focou na <b>personalização total</b>. Embora a estrutura funcional seja consistente, a interface deve "respirar" a marca do cliente.</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">MATRIZ DE PRIORIZAÇÃO</h4>
+      <p>Priorizou-se a <b>facilidade de navegação</b> (Impacto Alto / Esforço Médio) e a <b>personalização visual</b> para cada cliente (Impacto Alto / Esforço Médio).</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">WIREFRAMES</h4>
+      <p>Criados para definir a arquitetura de informação e garantir que botões de ação (como "Confirmar" ou "Refazer") estivessem sempre claros.</p>
+    </div>
+
+    <div class="media-frame reveal">
+      <img src="https://image.qwenlm.ai/public_source/5bad0ea8-3e60-4539-812d-d60d10ae8850/14f741169-eefe-4508-b418-3d7cd1d8e83a.png" alt="Wireframe do fluxo de usuário do totem">
+      <span class="mf-hud"><span>WIREFRAME // FLUXO_USUARIO</span><span class="r">REC ●</span></span>
+    </div>
+
+    <!-- FASE 4: ENTREGAR -->
+    <div class="phase" data-phase="PHASE_04 // ENTREGAR">
+      <h3>Entregar</h3>
+      <p>As interfaces são personalizadas de forma prática para as marcas ou eventos como <b>Santos FC, Corinthians Basquete, Chiquititas e Hello Kitty</b>.</p>
+
+      <h4 style="font-size:.85rem;letter-spacing:.12em;color:var(--txt);margin:1.4rem 0 .8rem;font-family:var(--font-m)">DECISÕES VISUAIS E DE INTERFACE</h4>
+      <ul>
+        <li><b>Tipografia e Cores:</b> adaptadas conforme a marca do cliente para garantir coesão estética. A aplicação tem um sistema de troca de componentes e personalização rápida</li>
+        <li><b>Tela de Escolha:</b> inclusão de uma tela de "Escolha de Quantidade de Impressões" para dar autonomia ao usuário e aumentar o valor recebido da ativação</li>
+        <li><b>Totem Físico:</b> apresentação do totem físico personalizado com adesivo laminado e MDF, garantindo a integridade e durabilidade do equipamento</li>
+      </ul>
+    </div>
   </section>
 
+  <!-- DESIGN FINAL -->
+  <section class="block reveal">
+    <span class="block-code">// SEC_E</span>
+    <h2>Design final</h2>
+    <p>Cada elemento visual da aplicação — das estruturas de navegação aos detalhes gráficos — é alinhado com a identidade da marca ou projeto. O processo de design combina princípios de UX/UI com diretrizes visuais da marca para garantir uma experiência coesa, intuitiva e esteticamente alinhada em todos os aspectos.</p>
+  </section>
+
+  <div class="grid-2 reveal">
+    <div class="media-frame">
+      <img src="https://image.qwenlm.ai/public_source/5bad0ea8-3e60-4539-812d-d60d10ae8850/178e6d2d9-f54d-403c-a5f2-3159d77a7ff4.png" alt="Interface de seleção de personagens">
+      <span class="mf-hud"><span>UI // SELECAO_PERSONAGEM</span><span class="r">REC ●</span></span>
+    </div>
+    <div class="media-frame">
+      <img src="https://image.qwenlm.ai/public_source/5bad0ea8-3e60-4539-812d-d60d10ae8850/16c66a80b-251c-4a80-baf7-db4907e37da6.png" alt="Interface de captura de foto com realidade aumentada">
+      <span class="mf-hud"><span>UI // CAPTURA_AR</span><span class="r">REC ●</span></span>
+    </div>
+  </div>
+
+  <!-- RESULTADOS -->
+  <section class="block reveal">
+    <span class="block-code">// SEC_F</span>
+    <h2>Resultados e impactos</h2>
+    
+    <div class="results">
+      <div class="result">
+        <b>+TEMPO</b>
+        <span>Aumento no tempo de permanência do público no estande</span>
+      </div>
+      <div class="result">
+        <b>HIGH</b>
+        <span>Taxa de conversão entre "foto tirada" e "foto impressa"</span>
+      </div>
+      <div class="result">
+        <b>4+</b>
+        <span>Marcas atendidas (Santos FC, Corinthians, Chiquititas, Hello Kitty)</span>
+      </div>
+    </div>
+
+    <h3 style="font-size:1rem;margin-top:1.6rem">Feedback qualitativo</h3>
+    <p>Relatos de usuários destacando a <b>facilidade do processo</b> e a satisfação em levar uma recordação física personalizada com uma experiência de realidade aumentada.</p>
+  </section>
+
+  <!-- APRENDIZADOS -->
+  <section class="block reveal">
+    <span class="block-code">// SEC_G</span>
+    <h2>Aprendizados e reflexões</h2>
+    <p>O maior aprendizado foi equilibrar a <b>consistência do sistema</b> (backend/fluxo) com a <b>flexibilidade visual total</b> (frontend/UI). Entender que em eventos a velocidade de interação é tão importante quanto a estética ajudou a refinar o fluxo para ser o mais enxuto possível.</p>
+  </section>
+
+  <!-- CONCLUSÃO -->
+  <section class="block reveal">
+    <span class="block-code">// SEC_H</span>
+    <h2>Conclusão</h2>
+    <p>O projeto demonstrou que totens interativos são ferramentas poderosas de branding. A solução final entregou uma experiência de usuário fluida que não apenas registra um momento, mas <b>fortalece a identidade da marca</b> no imaginário do público.</p>
+  </section>
+
+  <!-- AGRADECIMENTO -->
+  <section class="block reveal" style="border:1px solid var(--line2);background:var(--bg2);padding:clamp(1.6rem,3vw,2.4rem);text-align:center">
+    <span class="block-code" style="text-align:center">// END_OF_FILE</span>
+    <h2 style="margin-bottom:1rem">Obrigado!</h2>
+    <p style="max-width:42rem;margin:0 auto 1.6rem">Este projeto foi uma jornada recompensadora de equilibrar tecnologia e design para criar conexões reais entre marcas e pessoas. Se você quiser conversar mais sobre o processo, trocar ideias sobre UX sinta-se à vontade para entrar em contato!</p>
+    <div class="tags" style="justify-content:center">
+      <span>DESIGN & UX/UI: LUCAS BRUNINI</span>
+      <span>TECNOLOGIA: SMARTOOL</span>
+    </div>
+  </section>
+
+  <!-- NAVEGAÇÃO -->
   <nav class="case-nav reveal">
-    <a href="../case-anterior/index.html">← CASE ANTERIOR<b>Nome do Case Anterior</b></a>
-    <a class="next" href="../proximo-case/index.html">PRÓXIMO CASE →<b>Nome do Próximo Case</b></a>
+    <a href="../../index.html">← VOLTAR AO ÍNDICE<b>Todos os Cases</b></a>
+    <a class="next" href="../../index.html#contato">ENTRAR EM CONTATO →<b>Vamos conversar</b></a>
   </nav>
 </main>
 
-<footer class="wrap">
+<footer>
   <span class="info">© 2025 LUCAS BRUNINI — SÃO PAULO // BR</span>
   <a class="cta" href="mailto:brunini.lucas@gmail.com">VAMOS CONVERSAR ↗</a>
 </footer>
@@ -161,6 +258,22 @@ footer .info{font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;col
 <script>
 (function(){
   'use strict';
+  
+  // Cursor customizado
+  var cursor = document.getElementById('cursor');
+  var cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
+  addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; });
+  (function loop(){
+    cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+    cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a, button').forEach(function(el){
+    el.addEventListener('mouseenter', function(){ cursor.classList.add('grow'); });
+    el.addEventListener('mouseleave', function(){ cursor.classList.remove('grow'); });
+  });
+
+  // Reveal on scroll
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }

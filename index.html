@@ -4,282 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUCAS BRUNINI ✦ UX/UI & DESIGN GRÁFICO</title>
-<meta name="description" content="Portfólio de Lucas Brunini — UX UI Designer e Designer Gráfico. Precisão industrial, design centrado no usuário e atmosfera retro-tech.">
+<meta name="description" content="Portfólio de Lucas Brunini — Product Designer e Designer Gráfico. Precisão industrial, design centrado no usuário e atmosfera retro-tech.">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230E0E11%22/><rect x=%2230%22 y=%2230%22 width=%2240%22 height=%2240%22 fill=%22%23E53935%22/></svg>'>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
-<style>
-/* ============================================================
-   DIREÇÃO VISUAL — "INDUSTRIAL PRECISION × RETRO-FUTURISM"
-   Pós-punk (Factory/Mute Records) + HUDs de animes 80/90.
-   Fundo carvão, grids funcionais, 1px lines, cruzetas, scanlines,
-   Syne heavy (display) + Space Mono (metadados) + Inter (corpo).
-   Acentos: vermelho alarme / verde fósforo / âmbar CRT.
-============================================================ */
-:root{
-  --bg:#0E0E11;
-  --bg2:#15161A;
-  --bg3:#1B1D24;
-  --line:rgba(255,255,255,.09);
-  --line2:rgba(255,255,255,.22);
-  --txt:#E8E9EC;
-  --mut:#8B8F98;
-  --red:#E53935;
-  --red2:#D00036;
-  --green:#00FF66;
-  --amber:#FFB000;
-  --font-d:'Syne',sans-serif;
-  --font-b:'Inter',sans-serif;
-  --font-m:'Space Mono',monospace;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --chamfer:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:var(--font-b);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--red);color:#fff}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
-section{scroll-margin-top:92px}
-.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-.mono{font-family:var(--font-m)}
-h1,h2,h3,h4{font-family:var(--font-d);text-transform:uppercase;letter-spacing:-.01em}
-
-/* ---------- overlays: grain + scanlines ---------- */
-.noise{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.scanlines{position:fixed;inset:0;z-index:61;pointer-events:none;opacity:.5;
-  background:repeating-linear-gradient(to bottom, rgba(255,255,255,.022) 0 1px, transparent 1px 3px)}
-
-/* ---------- cursor ---------- */
-.cursor{position:fixed;left:0;top:0;width:8px;height:8px;background:var(--red);z-index:120;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s var(--ease),height .25s var(--ease),background .25s,border .25s;display:none}
-@media (hover:hover) and (pointer:fine){
-  body,a,button{cursor:none}
-  .cursor{display:block}
-  .cursor.grow{width:42px;height:42px;background:transparent;border:1px solid var(--red)}
-}
-
-/* ---------- preloader boot ---------- */
-#preloader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,4vw,48px);transition:transform .7s var(--ease)}
-#preloader.done{transform:translateY(-101%)}
-.pre-top{font-family:var(--font-m);font-size:.72rem;letter-spacing:.16em;color:var(--mut);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.pre-top b{color:var(--red);font-weight:400}
-.boot-log{font-family:var(--font-m);font-size:.78rem;color:var(--green);display:flex;flex-direction:column;gap:.45rem;letter-spacing:.06em}
-.boot-log span{opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
-.boot-log span.on{opacity:1;transform:none}
-.pre-count{font-family:var(--font-d);font-weight:800;font-size:clamp(4rem,14vw,9.5rem);line-height:1;color:var(--txt);align-self:flex-end}
-.pre-count em{font-style:normal;color:var(--red)}
-
-/* ---------- header ---------- */
-header{position:fixed;top:0;left:0;right:0;z-index:80;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
-header.scrolled{background:rgba(14,14,17,.88);backdrop-filter:blur(10px);border-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:var(--font-m);font-size:.85rem;letter-spacing:.14em}
-.logo b{color:var(--red);font-weight:400}
-.logo .dim{color:var(--mut)}
-.nav-links{display:flex;gap:1.8rem}
-.nav-links a{font-family:var(--font-m);font-size:.68rem;letter-spacing:.18em;color:var(--mut);position:relative;padding:4px 0;transition:color .3s}
-.nav-links a::before{content:'/';color:var(--red);margin-right:.35em;opacity:.6}
-.nav-links a:hover,.nav-links a.active{color:var(--txt)}
-.status-pill{display:flex;align-items:center;gap:.6em;font-family:var(--font-m);font-size:.66rem;letter-spacing:.16em;color:var(--green);border:1px solid var(--line);padding:.55rem 1rem}
-.status-pill i{width:7px;height:7px;background:var(--green);animation:blink 1.4s steps(1) infinite}
-@keyframes blink{50%{opacity:.15}}
-.burger{display:none;flex-direction:column;gap:6px;padding:8px;z-index:100}
-.burger span{width:24px;height:2px;background:var(--txt);transition:transform .4s var(--ease)}
-.burger.open span:nth-child(1){transform:translateY(4px) rotate(45deg)}
-.burger.open span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
-@media(max-width:960px){.nav-links,.status-pill{display:none}.burger{display:flex}}
-.menu-overlay{position:fixed;inset:0;z-index:90;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,6vw,60px);clip-path:inset(0 0 100% 0);transition:clip-path .55s var(--ease);visibility:hidden}
-.menu-overlay.open{clip-path:inset(0 0 0% 0);visibility:visible}
-.menu-overlay a{font-family:var(--font-d);font-weight:800;font-size:clamp(1.8rem,8vw,3rem);text-transform:uppercase;padding:.4rem 0;border-bottom:1px solid var(--line);opacity:0;transform:translateY(20px);transition:opacity .4s var(--ease),transform .4s var(--ease),color .3s}
-.menu-overlay a:hover{color:var(--red)}
-.menu-overlay.open a{opacity:1;transform:none}
-.menu-overlay.open a:nth-child(1){transition-delay:.12s}
-.menu-overlay.open a:nth-child(2){transition-delay:.19s}
-.menu-overlay.open a:nth-child(3){transition-delay:.26s}
-.menu-overlay.open a:nth-child(4){transition-delay:.33s}
-.menu-overlay.open a:nth-child(5){transition-delay:.4s}
-.menu-meta{margin-top:2.4rem;font-family:var(--font-m);font-size:.68rem;letter-spacing:.16em;color:var(--mut)}
-
-/* ---------- hero ---------- */
-.hero{min-height:100svh;position:relative;display:flex;align-items:center;padding:130px 0 70px;
-  background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:88px 88px;background-position:center}
-.hero-frame{position:relative;padding:clamp(20px,3vw,40px)}
-.hero-frame::before,.hero-frame::after{content:'';position:absolute;width:26px;height:26px;border:1px solid var(--red)}
-.hero-frame::before{top:0;left:0;border-right:none;border-bottom:none}
-.hero-frame::after{bottom:0;right:0;border-left:none;border-top:none}
-.hero-kicker{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--mut);margin-bottom:1.6rem}
-.hero-kicker b{color:var(--red);font-weight:400}
-.hero-title{font-size:clamp(2.6rem,8.4vw,7rem);font-weight:800;line-height:.98}
-.hero-title .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
-.hero-title .line>span{display:block;transform:translateY(112%);transition:transform 1s var(--ease)}
-body.loaded .hero-title .line>span{transform:none}
-.hero-title .line:nth-child(2)>span{transition-delay:.07s}
-.hero-title .line:nth-child(3)>span{transition-delay:.14s}
-.hero-title .line:nth-child(4)>span{transition-delay:.21s}
-.outline{color:transparent;-webkit-text-stroke:1.5px var(--txt)}
-.red{color:var(--red)}
-.caret::after{content:'▮';color:var(--green);animation:blink 1.1s steps(1) infinite;margin-left:.15em}
-.hero-sub{max-width:36rem;color:var(--mut);margin:1.8rem 0 2.4rem;font-size:clamp(.98rem,1.3vw,1.1rem)}
-.hero-sub b{color:var(--txt);font-weight:500}
-.hero-hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--line)}
-.hud-cell{padding:1rem 1.2rem;border-right:1px solid var(--line);font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;color:var(--mut)}
-.hud-cell:last-child{border-right:none}
-.hud-cell b{display:block;color:var(--txt);font-weight:400;margin-top:.3rem}
-.hud-cell .g{color:var(--green)}
-.hud-cell .r{color:var(--red)}
-.hero-side{position:absolute;right:clamp(8px,2vw,28px);top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--font-m);font-size:.64rem;letter-spacing:.3em;color:var(--mut)}
-@media(max-width:900px){.hero-side{display:none}}
-.scroll-hint{position:absolute;left:clamp(20px,4vw,48px);bottom:26px;display:flex;align-items:center;gap:.8em;font-family:var(--font-m);font-size:.64rem;letter-spacing:.2em;color:var(--mut)}
-.scroll-hint i{width:1px;height:38px;background:var(--line2);position:relative;overflow:hidden}
-.scroll-hint i::after{content:'';position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--red);animation:drop 1.8s ease-in-out infinite}
-@keyframes drop{0%{top:-100%}60%,100%{top:100%}}
-
-/* ---------- marquee ---------- */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:1rem 0;background:var(--bg2)}
-.marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite}
-.marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-track span{font-family:var(--font-d);font-weight:700;font-size:.95rem;letter-spacing:.16em;white-space:nowrap;padding:0 1.2rem;display:flex;align-items:center;gap:2.4rem;color:var(--txt)}
-.marquee-track span::after{content:'//';color:var(--red);font-family:var(--font-m)}
-@keyframes marquee{to{transform:translateX(-50%)}}
-
-/* ---------- seções ---------- */
-.sec{position:relative;padding:clamp(70px,9vw,120px) 0}
-.plus{position:absolute;font-family:var(--font-m);color:var(--mut);font-size:.8rem;user-select:none}
-.plus.tl{top:10px;left:14px}.plus.tr{top:10px;right:14px}.plus.bl{bottom:10px;left:14px}.plus.br{bottom:10px;right:14px}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;flex-wrap:wrap;border-top:1px solid var(--line2);padding-top:1.1rem;margin-bottom:clamp(2.4rem,5vw,3.6rem)}
-.sec-code{font-family:var(--font-m);font-size:.7rem;letter-spacing:.2em;color:var(--red)}
-.sec-head h2{font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:800}
-.sec-meta{font-family:var(--font-m);font-size:.68rem;letter-spacing:.18em;color:var(--mut)}
-
-/* ---------- cases ---------- */
-.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.6rem}
-.chip{font-family:var(--font-m);font-size:.66rem;letter-spacing:.16em;border:1px solid var(--line2);padding:.6rem 1.1rem;color:var(--mut);transition:background .3s,color .3s,border-color .3s}
-.chip:hover{border-color:var(--red);color:var(--txt)}
-.chip.active{background:var(--red);border-color:var(--red);color:#fff}
-.projects{display:flex;flex-direction:column;gap:clamp(52px,7vw,84px)}
-.project{transition:opacity .4s var(--ease),transform .4s var(--ease)}
-.project.hide{opacity:0;transform:scale(.985)}
-.project.gone{display:none}
-.project-media{position:relative;display:block;overflow:hidden;background:var(--bg2);border:1px solid var(--line2);clip-path:var(--chamfer)}
-.project-media img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:saturate(.9) contrast(1.05);transition:transform .9s var(--ease),filter .6s}
-.project-media:hover img{transform:scale(1.045);filter:saturate(1.05) contrast(1.05)}
-.project-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom, rgba(0,0,0,.14) 0 1px, transparent 1px 4px);opacity:0;transition:opacity .4s}
-.project-media:hover::after{opacity:1}
-.pm-hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:.7rem 1rem;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--green);background:linear-gradient(to bottom, rgba(14,14,17,.85), transparent);z-index:2}
-.pm-hud .r{color:var(--red)}
-.pm-arrow{position:absolute;right:14px;bottom:14px;width:52px;height:52px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:1.2rem;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .4s var(--ease);z-index:2}
-.project-media:hover .pm-arrow{opacity:1;transform:none}
-.project-info{display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:start;border-top:1px solid var(--line);margin-top:1.2rem;padding-top:1.1rem}
-.project-index{font-family:var(--font-m);color:var(--red);font-size:.85rem;padding-top:.3rem}
-.project-info h3{font-size:clamp(1.15rem,2.2vw,1.6rem);font-weight:700}
-.project-info p{color:var(--mut);max-width:46rem;margin:.35rem 0 .9rem;font-size:.93rem}
-.tags{display:flex;gap:.5rem;flex-wrap:wrap}
-.tag{font-family:var(--font-m);font-size:.6rem;letter-spacing:.14em;border:1px solid var(--line);padding:.35rem .7rem;color:var(--mut)}
-.project-status{font-family:var(--font-m);font-size:.64rem;letter-spacing:.14em;padding-top:.35rem;text-align:right}
-.project-status .g{color:var(--green)}
-.project-status .a{color:var(--amber)}
-@media(max-width:640px){.project-info{grid-template-columns:auto 1fr}.project-status{grid-column:2;text-align:left}}
-
-/* ---------- sobre ---------- */
-#sobre{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,5.5rem)}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
-.portrait{position:relative;border:1px solid var(--line2);clip-path:var(--chamfer);background:var(--bg3)}
-.portrait img{aspect-ratio:4/5;object-fit:cover;width:100%;filter:saturate(.85) contrast(1.08)}
-.portrait::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom, rgba(0,0,0,.12) 0 1px, transparent 1px 4px);pointer-events:none}
-.portrait-cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:.7rem 1rem;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--green);background:rgba(14,14,17,.9);z-index:2}
-.portrait-cap .r{color:var(--red)}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.6rem}
-.stat{background:var(--bg2);padding:1.2rem 1.1rem}
-.stat b{font-family:var(--font-d);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1;display:block}
-.stat b em{font-style:normal;color:var(--red)}
-.stat span{font-family:var(--font-m);font-size:.6rem;letter-spacing:.14em;color:var(--mut)}
-.about-right h3{font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.08;margin:1rem 0 1.4rem}
-.about-right p{color:var(--mut);margin-bottom:1rem;max-width:38rem;font-size:.96rem}
-.about-right p b{color:var(--txt);font-weight:500}
-.log-line{font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;color:var(--green);margin-bottom:1.4rem}
-
-/* ---------- experiência ---------- */
-.xp-list{border-top:1px solid var(--line2)}
-.xp{display:grid;grid-template-columns:170px 1fr;gap:1.4rem;padding:1.6rem .6rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:border-color .3s,background .3s,padding .3s var(--ease)}
-.xp:hover{border-left-color:var(--red);background:var(--bg2);padding-left:1.2rem}
-.xp .when{font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;color:var(--red);padding-top:.3rem}
-.xp h3{font-size:clamp(1.05rem,2vw,1.4rem)}
-.xp .role{font-family:var(--font-m);font-size:.66rem;letter-spacing:.16em;color:var(--green);display:block;margin:.3rem 0 .7rem}
-.xp ul{list-style:none;color:var(--mut);font-size:.9rem;max-width:52rem}
-.xp li{padding-left:1.2em;position:relative;margin-bottom:.35rem}
-.xp li::before{content:'▸';position:absolute;left:0;color:var(--red)}
-@media(max-width:700px){.xp{grid-template-columns:1fr;gap:.4rem}}
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:3rem}
-@media(max-width:800px){.edu-grid{grid-template-columns:1fr}}
-.panel{border:1px solid var(--line2);background:var(--bg2);padding:1.6rem 1.5rem;position:relative}
-.panel::before{content:attr(data-code);position:absolute;top:.8rem;right:1rem;font-family:var(--font-m);font-size:.6rem;letter-spacing:.18em;color:var(--mut)}
-.panel h4{font-size:.95rem;letter-spacing:.08em;color:var(--txt);margin-bottom:1rem}
-.panel h4 i{font-style:normal;color:var(--red)}
-.panel p{color:var(--mut);font-size:.9rem}
-.cert{display:grid;grid-template-columns:auto 1fr;gap:.9rem;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--mut)}
-.cert:last-child{border-bottom:none}
-.cert i{font-style:normal;font-family:var(--font-m);font-size:.68rem;color:var(--amber)}
-
-/* ---------- habilidades ---------- */
-#habilidades{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.skills-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.5rem,6vw,5rem)}
-@media(max-width:900px){.skills-grid{grid-template-columns:1fr}}
-.skill{display:grid;grid-template-columns:110px 1fr 46px;gap:1rem;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--line)}
-.sk-name{font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;color:var(--txt)}
-.sk-bar{display:flex;gap:4px}
-.sk-bar i{height:10px;flex:1;background:rgba(255,255,255,.08);transition:background .5s var(--ease)}
-.sk-bar i.on{background:var(--red)}
-.sk-bar i.on:last-of-type{background:var(--amber)}
-.sk-val{font-family:var(--font-m);font-size:.66rem;color:var(--green);text-align:right}
-.cap-group{margin-bottom:1.8rem}
-.cap-group h4{font-size:.8rem;letter-spacing:.12em;color:var(--txt);margin-bottom:.8rem}
-.cap-group h4 i{font-style:normal;color:var(--red)}
-
-/* ---------- processo ---------- */
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-@media(max-width:900px){.process{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.process{grid-template-columns:1fr}}
-.step{background:var(--bg);padding:1.6rem 1.4rem;position:relative;transition:background .3s}
-.step:hover{background:var(--bg3)}
-.step .num{font-family:var(--font-m);font-size:.7rem;color:var(--red);letter-spacing:.16em}
-.step h4{font-size:1rem;margin:.7rem 0 .5rem;letter-spacing:.06em}
-.step p{font-size:.85rem;color:var(--mut)}
-.step::after{content:'+';position:absolute;top:8px;right:12px;color:var(--mut);font-family:var(--font-m)}
-
-/* ---------- footer ---------- */
-footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
-.footer-title{font-size:clamp(2.2rem,6.6vw,5.2rem);font-weight:800;line-height:1;margin:1.4rem 0 2.4rem}
-.footer-title .outline{ -webkit-text-stroke:1.5px var(--txt)}
-.mail-btn{display:inline-flex;align-items:center;gap:1rem;background:var(--red);color:#fff;padding:1.1rem 2rem;font-family:var(--font-m);font-size:.8rem;letter-spacing:.12em;clip-path:var(--chamfer);transition:transform .3s var(--ease),background .3s}
-.mail-btn:hover{transform:translateY(-4px);background:var(--red2)}
-.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-bottom:none;margin-top:clamp(56px,8vw,96px)}
-@media(max-width:800px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
-.contact-grid a{padding:1.5rem 1.1rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--font-m);font-size:.68rem;letter-spacing:.14em;color:var(--mut);transition:background .3s,color .3s}
-.contact-grid a:nth-child(4n){border-right:none}
-.contact-grid a b{display:block;color:var(--txt);font-weight:400;margin-top:.4rem;letter-spacing:.08em}
-.contact-grid a:hover{background:var(--bg2);color:var(--txt)}
-.contact-grid a:hover b{color:var(--green)}
-.footer-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.5rem 0;font-family:var(--font-m);font-size:.62rem;letter-spacing:.16em;color:var(--mut)}
-#topo{color:var(--txt)}
-#topo:hover{color:var(--red)}
-.footer-ghost{position:absolute;right:-40px;bottom:-70px;font-family:var(--font-d);font-weight:800;font-size:280px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);pointer-events:none;user-select:none}
-
-/* ---------- reveal ---------- */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-  .hero-title .line>span{transform:none}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -288,7 +20,7 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <div id="preloader" aria-hidden="true">
-  <div class="pre-top"><span>BRUNINI.SYS <b></b></span><span>SÃO PAULO // BR — 23°33'S 46°38'W</span></div>
+  <div class="pre-top"><span>BRUNINI.SYS <b>v2.0</b></span><span>SÃO PAULO // BR — 23°33'S 46°38'W</span></div>
   <div class="boot-log" id="bootLog">
     <span>&gt; INITIALIZING PORTFOLIO.SYS ...</span>
     <span>&gt; LOADING CASES [UX/UI · BRANDING · EDITORIAL] ... OK</span>
@@ -300,7 +32,7 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
 
 <header id="header">
   <div class="wrap nav">
-    <a href="#" class="logo"><b>▮</b> L.BRUNINI <span class="dim">// UX-UI_DESIGNER</span></a>
+    <a href="index.html" class="logo"><b>▮</b> L.BRUNINI <span class="dim">// UX-UI_DESIGNER</span></a>
     <nav class="nav-links" aria-label="Navegação principal">
       <a href="#projetos" data-nav="projetos">CASES</a>
       <a href="#sobre" data-nav="sobre">SOBRE</a>
@@ -361,116 +93,30 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
       <div class="sec-head reveal">
         <span class="sec-code">// SEC_01</span>
         <h2>Cases selecionados</h2>
-        <span class="sec-meta">TOTAL: 05 REGISTROS</span>
+        <span class="sec-meta">TOTAL: 01 REGISTRO</span>
       </div>
       <div class="chips reveal" role="group" aria-label="Filtrar cases">
         <button class="chip active" data-filter="todos">[ TODOS ]</button>
         <button class="chip" data-filter="uxui">[ UX/UI ]</button>
         <button class="chip" data-filter="branding">[ BRANDING ]</button>
-        <button class="chip" data-filter="editorial">[ EDITORIAL ]</button>
-        <button class="chip" data-filter="grafico">[ GRÁFICO ]</button>
+        <button class="chip" data-filter="evento">[ EVENTO ]</button>
       </div>
 
       <div class="projects">
         <article class="project reveal" data-cat="uxui">
-  <!-- ⬇️ o href aponta para a página do case -->
-  <a class="project-media" href="cases/totem-fotos/totem-fotos.html" aria-label="Case Nome do Projeto">
-    <img src="cases/nome-do-case/capa.jpg" alt="Descrição da imagem do projeto" loading="lazy">
-    <span class="pm-hud"><span>CASE_06 // CATEGORIA</span><span class="r">REC ●</span></span>
-    <span class="pm-arrow">↗</span>
-  </a>
-  <div class="project-info">
-    <span class="project-index">06/</span>
-    <div>
-      <h3>Nome do Projeto</h3>
-      <p>Descrição curta do projeto em 1 ou 2 frases — problema, o que você fez e resultado.</p>
-      <div class="tags"><span>TAG 1</span><span>TAG 2</span><span>TAG 3</span></div>
-    </div>
-    <span class="project-status"><span class="g">STATUS: EM CURSO</span><br>2025</span>
-  </div>
-</article>
-        <article class="project reveal" data-cat="uxui">
-          <a class="project-media" href="#contato" aria-label="Case Smartool Plataforma Web">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/1e1644fc1-378c-441e-97d7-afc7e7a076aa.png" alt="Dashboard da plataforma Smartool em um laptop" loading="lazy">
-            <span class="pm-hud"><span>CASE_01 // SAAS_PLATFORM</span><span class="r">REC ●</span></span>
+          <a class="project-media" href="cases/totem-fotos/totem-fotos.html" aria-label="Case Totem de Fotos Interativo">
+            <img src="https://image.qwenlm.ai/public_source/5bad0ea8-3e60-4539-812d-d60d10ae8850/15b5a1984-0b27-4669-b054-443dd1ac9f0b.png" alt="Totem de fotos interativo em evento corporativo" loading="lazy">
+            <span class="pm-hud"><span>CASE_01 // TOTEM_FOTOS</span><span class="r">REC ●</span></span>
             <span class="pm-arrow">↗</span>
           </a>
           <div class="project-info">
-            <span class="project-index">01/</span>
-            <div>
-              <h3>Smartool — Plataforma Web</h3>
-              <p>Liderança do design da plataforma: arquitetura da informação, wireframes, protótipos de alta fidelidade no Figma e diretrizes de cor, tipografia e hierarquia — com consistência e acessibilidade em escala.</p>
-              <div class="tags"><span>UX/UI</span><span>DESIGN SYSTEM</span><span>FIGMA</span><span>HANDOFF</span></div>
+            <div class="project-top">
+              <span class="project-index">01/</span>
+              <span class="project-status"><span class="g">STATUS: SHIPPED</span><br>2024</span>
             </div>
-            <span class="project-status"><span class="g">STATUS: EM CURSO</span><br>2024 — ATUAL</span>
-          </div>
-        </article>
-
-        <article class="project reveal" data-cat="uxui">
-          <a class="project-media" href="#contato" aria-label="Case Smartool Fluxos Mobile">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/1236c1865-1981-40fb-9c95-6c564a8f01bd.png" alt="Telas mobile do app Smartool com agendamentos e ordens de serviço" loading="lazy">
-            <span class="pm-hud"><span>CASE_02 // MOBILE_FLOWS</span><span class="r">REC ●</span></span>
-            <span class="pm-arrow">↗</span>
-          </a>
-          <div class="project-info">
-            <span class="project-index">02/</span>
-            <div>
-              <h3>Smartool — Fluxos Mobile</h3>
-              <p>Fluxos de agendamento e ordens de serviço em mobile: prototipagem de alta fidelidade, testes de usabilidade e iterações guiadas por feedback real de usuários para otimizar a navegação.</p>
-              <div class="tags"><span>UX/UI</span><span>MOBILE</span><span>TESTES DE USABILIDADE</span><span>PROTOTIPAGEM</span></div>
-            </div>
-            <span class="project-status"><span class="g">STATUS: EM CURSO</span><br>2024 — ATUAL</span>
-          </div>
-        </article>
-
-        <article class="project reveal" data-cat="branding">
-          <a class="project-media" href="#contato" aria-label="Case Identidades Visuais Freelance">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/1588be039-9ece-4800-a23a-849b68b74867.png" alt="Apresentação de identidade visual com cartão preto em alto-relevo e paleta" loading="lazy">
-            <span class="pm-hud"><span>CASE_03 // BRAND_ID</span><span class="r">REC ●</span></span>
-            <span class="pm-arrow">↗</span>
-          </a>
-          <div class="project-info">
-            <span class="project-index">03/</span>
-            <div>
-              <h3>Identidades Visuais — Freelance</h3>
-              <p>Branding de ponta a ponta para projetos autorais e clientes: estratégia, logotipo, key visuals e guidelines completos, com design centrado no usuário aplicado à construção de marca.</p>
-              <div class="tags"><span>BRANDING</span><span>KEY VISUAL</span><span>DIREÇÃO DE ARTE</span></div>
-            </div>
-            <span class="project-status"><span class="a">STATUS: SHIPPED</span><br>2024 — ATUAL</span>
-          </div>
-        </article>
-
-        <article class="project reveal" data-cat="editorial">
-          <a class="project-media" href="#contato" aria-label="Case Editorial e Quadrinhos">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/17d92b7c4-b31c-46ec-b9f5-dc101050ba04.png" alt="Páginas de quadrinho diagramadas fixadas em parede escura" loading="lazy">
-            <span class="pm-hud"><span>CASE_04 // EDITORIAL</span><span class="r">REC ●</span></span>
-            <span class="pm-arrow">↗</span>
-          </a>
-          <div class="project-info">
-            <span class="project-index">04/</span>
-            <div>
-              <h3>Editorial & Quadrinhos</h3>
-              <p>Diagramação para literatura e HQs: hierarquia visual, ritmo de leitura, estética de meio-tom e escrita criativa a serviço da narrativa — do roteiro à arte final.</p>
-              <div class="tags"><span>EDITORIAL</span><span>DIAGRAMAÇÃO</span><span>PRINT</span><span>INDESIGN</span></div>
-            </div>
-            <span class="project-status"><span class="a">STATUS: SHIPPED</span><br>2024</span>
-          </div>
-        </article>
-
-        <article class="project reveal" data-cat="grafico">
-          <a class="project-media" href="#contato" aria-label="Case Key Visual e Motion">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/14552aa7b-91fa-4be5-81a5-bc4e4ea4a685.png" alt="Pôster key visual retro-futurista com mecha emoldurado" loading="lazy">
-            <span class="pm-hud"><span>CASE_05 // KEY_VISUAL</span><span class="r">REC ●</span></span>
-            <span class="pm-arrow">↗</span>
-          </a>
-          <div class="project-info">
-            <span class="project-index">05/</span>
-            <div>
-              <h3>Key Visual & Motion</h3>
-              <p>Direção de arte de atmosfera retro-tech: key visuals, pôsteres e peças com motion design no After Effects — texturas analógicas, halftone e luz de CRT para campanhas.</p>
-              <div class="tags"><span>GRÁFICO</span><span>MOTION</span><span>AFTER EFFECTS</span><span>ART DIRECTION</span></div>
-            </div>
-            <span class="project-status"><span class="a">STATUS: SHIPPED</span><br>2023 — ATUAL</span>
+            <h3>Totem de Fotos Interativo</h3>
+            <p>Experiência de marca em eventos com interação instantânea, storytelling visual e compartilhamento em tempo real — unindo UX, produto e identidade gráfica em uma solução emocional.</p>
+            <div class="tags"><span>UX/UI</span><span>PRODUCT DESIGN</span><span>EVENTO</span><span>BRANDING</span></div>
           </div>
         </article>
       </div>
@@ -481,15 +127,15 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
   <section id="sobre" class="sec">
     <i class="plus tl">+</i><i class="plus tr">+</i>
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head sec-head--about reveal">
         <span class="sec-code">// SEC_02</span>
-        <h2>Sobre o operador</h2>
+        <h2>Sobre mim</h2>
         <span class="sec-meta">ID: LUCAS_BRUNINI</span>
       </div>
       <div class="about-grid">
         <div class="reveal">
           <div class="portrait">
-            <img src="https://image.qwenlm.ai/public_source/ef4f0813-eb2c-4903-aff2-bdb813e479f8/17f3250ad-9ea3-4cb1-a53e-91f5a26d5a7c.png" alt="Retrato de Lucas Brunini em estúdio escuro com luzes neon" loading="lazy">
+            <img src="assets/imagens/foto-perfil.jpg" alt="Retrato de Lucas Brunini" loading="lazy">
             <span class="portrait-cap"><span>L.BRUNINI // PRODUCT_DESIGNER</span><span class="r">CAM_01 ●</span></span>
           </div>
           <div class="stats">
@@ -668,7 +314,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
 (function(){
   'use strict';
 
-  /* ---------- Preloader boot ---------- */
   var pre = document.getElementById('preloader');
   var preCount = document.getElementById('preCount');
   var bootLines = document.querySelectorAll('#bootLog span');
@@ -694,7 +339,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
   }
   requestAnimationFrame(tick);
 
-  /* ---------- Cursor ---------- */
   var cursor = document.getElementById('cursor');
   var cx = innerWidth/2, cy = innerHeight/2, tx = cx, ty = cy;
   addEventListener('mousemove', function(e){ tx = e.clientX; ty = e.clientY; });
@@ -708,13 +352,11 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
     el.addEventListener('mouseleave', function(){ cursor.classList.remove('grow'); });
   });
 
-  /* ---------- Header ---------- */
   var header = document.getElementById('header');
   addEventListener('scroll', function(){
     header.classList.toggle('scrolled', scrollY > 40);
   }, {passive:true});
 
-  /* ---------- Menu mobile ---------- */
   var burger = document.getElementById('burger');
   var overlay = document.getElementById('menuOverlay');
   function toggleMenu(force){
@@ -729,7 +371,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
     a.addEventListener('click', function(){ toggleMenu(false); });
   });
 
-  /* ---------- Reveal ---------- */
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
@@ -737,7 +378,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
   }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  /* ---------- Contadores (com padding) ---------- */
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(!en.isIntersecting) return;
@@ -755,7 +395,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
   }, {threshold:.6});
   document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
 
-  /* ---------- Filtro de cases ---------- */
   var chips = document.querySelectorAll('.chip');
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
@@ -776,7 +415,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
     });
   });
 
-  /* ---------- Barras de skill (10 células) ---------- */
   document.querySelectorAll('.skill').forEach(function(sk){
     var lv = +sk.dataset.lv || 0;
     var bar = sk.querySelector('.sk-bar');
@@ -787,7 +425,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
     }
   });
 
-  /* ---------- Nav ativa ---------- */
   var navMap = {};
   document.querySelectorAll('[data-nav]').forEach(function(a){ navMap[a.dataset.nav] = a; });
   var nio = new IntersectionObserver(function(entries){
@@ -804,7 +441,6 @@ footer{position:relative;overflow:hidden;border-top:1px solid var(--line2)}
     if(s) nio.observe(s);
   });
 
-  /* ---------- Diversos ---------- */
   document.getElementById('ano').textContent = new Date().getFullYear();
   document.getElementById('topo').addEventListener('click', function(){
     scrollTo({top:0, behavior:'smooth'});
