@@ -292,6 +292,27 @@ header {
   border-bottom: none;
 }
 
+.persona-visual {
+  margin-top: 1.4rem;
+}
+
+.visual-spec {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.visual-spec .media-frame {
+  margin: 0;
+}
+
+.visual-spec .media-frame img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: transparent;
+}
+
 .tags {
   display: flex;
   gap: 0.5rem;
@@ -629,6 +650,10 @@ footer {
 
 @media (max-width: 700px) {
   .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-spec {
     grid-template-columns: 1fr;
   }
 
