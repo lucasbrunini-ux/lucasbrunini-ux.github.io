@@ -180,29 +180,40 @@
     </section>
 
     <div class="grid-2 reveal">
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-01-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 01">
         <img src="../../assets/imagens/mobifarma/imagem-01-design-final.png" alt="Interface principal do Mobifarma no aplicativo">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_01</span><span class="r">REC ●</span></span>
       </div>
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-02-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 02">
         <img src="../../assets/imagens/mobifarma/imagem-02-design-final.png" alt="Tela de catálogo e busca do Mobifarma">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_02</span><span class="r">REC ●</span></span>
       </div>
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-03-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 03">
         <img src="../../assets/imagens/mobifarma/imagem-03-design-final.png" alt="Tela de produto e checkout do Mobifarma">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_03</span><span class="r">REC ●</span></span>
       </div>
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-04-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 04">
         <img src="../../assets/imagens/mobifarma/imagem-04-design-final.png" alt="Mapa e localização das vending machines Mobifarma">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_04</span><span class="r">REC ●</span></span>
       </div>
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-05-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 05">
         <img src="../../assets/imagens/mobifarma/imagem-05-design-final.png" alt="Visual da vending machine Mobifarma e identidade física">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_05</span><span class="r">REC ●</span></span>
       </div>
-      <div class="media-frame">
+      <div class="media-frame gallery-trigger" data-full="../../assets/imagens/mobifarma/imagem-06-design-final.png" tabindex="0" role="button" aria-label="Abrir imagem do design final do Mobifarma 06">
         <img src="../../assets/imagens/mobifarma/imagem-06-design-final.png" alt="Detalhes finais do ecossistema Mobifarma">
         <span class="mf-hud"><span>UI // DESIGN_FINAL_06</span><span class="r">REC ●</span></span>
+      </div>
+    </div>
+
+    <div class="gallery-modal" id="designModal" aria-hidden="true">
+      <div class="gallery-modal-panel">
+        <div class="gallery-meta" id="galleryMeta">CASE_02 // DESIGN_FINAL // MOBIFARMA</div>
+        <button class="gallery-close" type="button" aria-label="Fechar imagem">✕</button>
+        <button class="gallery-nav gallery-prev" type="button" aria-label="Imagem anterior">←</button>
+        <div class="gallery-counter" id="galleryCounter">01 / 06</div>
+        <img id="galleryImage" src="" alt="Visualização em tela cheia do design final">
+        <button class="gallery-nav gallery-next" type="button" aria-label="Próxima imagem">→</button>
       </div>
     </div>
 
@@ -286,6 +297,100 @@
           el.classList.add('in');
         });
       }
+
+      var modal = document.getElementById('designModal');
+      var modalImage = document.getElementById('galleryImage');
+      var counter = document.getElementById('galleryCounter');
+      var meta = document.getElementById('galleryMeta');
+      var closeButton = document.querySelector('.gallery-close');
+      var prevButton = document.querySelector('.gallery-prev');
+      var nextButton = document.querySelector('.gallery-next');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-trigger'));
+      var currentIndex = 0;
+
+      function updateMeta() {
+        if (!meta || !cards.length) return;
+        meta.textContent = 'CASE_02 // DESIGN_FINAL // MOBIFARMA_' + (currentIndex + 1).toString().padStart(2, '0');
+      }
+
+      function updateCounter() {
+        if (!counter || !cards.length) return;
+        counter.textContent = (currentIndex + 1).toString().padStart(2, '0') + ' / ' + cards.length.toString().padStart(2, '0');
+      }
+
+      function closeGallery() {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openGallery(index) {
+        if (!modal || !modalImage || !cards.length) return;
+        currentIndex = (index + cards.length) % cards.length;
+        modalImage.src = cards[currentIndex].getAttribute('data-full');
+        updateMeta();
+        updateCounter();
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      cards.forEach(function (card, index) {
+        card.addEventListener('click', function () {
+          currentIndex = index;
+          openGallery(currentIndex);
+        });
+
+        card.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            currentIndex = index;
+            openGallery(currentIndex);
+          }
+        });
+      });
+
+      if (closeButton) {
+        closeButton.addEventListener('click', closeGallery);
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener('click', function () {
+          openGallery(currentIndex - 1);
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', function () {
+          openGallery(currentIndex + 1);
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) closeGallery();
+        });
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (!modal || !modal.classList.contains('is-open')) return;
+
+        if (event.key === 'Escape') {
+          closeGallery();
+        }
+
+        if (event.key === 'ArrowLeft') {
+          openGallery(currentIndex - 1);
+        }
+
+        if (event.key === 'ArrowRight') {
+          openGallery(currentIndex + 1);
+        }
+      });
+
+      updateMeta();
+      updateCounter();
     })();
   </script>
 </body>
