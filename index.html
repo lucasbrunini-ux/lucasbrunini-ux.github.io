@@ -104,8 +104,10 @@
 
       <div class="projects">
         <article class="project reveal" data-cat="uxui design-grafico design-produto">
-          <a class="project-media" href="cases/totem-fotos/totem-fotos.html" aria-label="Totem de Fotos Interativo">
-            <img src="assets/imagens/totem-fotos/totem-fotos-capa.png" alt="Totem de fotos interativo em evento corporativo" loading="lazy">
+          <a class="project-media hover-video-card" href="cases/totem-fotos/totem-fotos.html" aria-label="Totem de Fotos Interativo">
+            <video class="hover-video" muted playsinline preload="auto" loop poster="assets/imagens/totem-fotos/totem-fotos-capa.png" aria-label="Vídeo de capa do Totem de Fotos Interativo">
+              <source src="assets/videos/totem de fotos/totem-fotos-capa.mp4" type="video/mp4">
+            </video>
             <span class="pm-hud"><span>CASE_01 // TOTEM_FOTOS</span><span class="r">REC ●</span></span>
             <span class="pm-arrow">↗</span>
           </a>
@@ -419,6 +421,29 @@
         }
       });
     });
+  });
+
+  document.querySelectorAll('.hover-video').forEach(function(video){
+    var card = video.closest('.hover-video-card');
+    if(!card) return;
+
+    video.loop = true;
+
+    function playVideo(){
+      if(!video.paused) return;
+      video.muted = true;
+      video.play().catch(function(){});
+    }
+
+    function pauseVideo(){
+      if(video.paused) return;
+      video.pause();
+    }
+
+    card.addEventListener('mouseenter', playVideo);
+    card.addEventListener('mouseleave', pauseVideo);
+    card.addEventListener('focusin', playVideo);
+    card.addEventListener('focusout', pauseVideo);
   });
 
   document.querySelectorAll('.skill').forEach(function(sk){

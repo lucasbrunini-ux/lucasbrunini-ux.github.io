@@ -204,6 +204,26 @@ header {
   overflow: hidden;
 }
 
+main.wrap > .media-frame,
+main.wrap > .media-frame img,
+main.wrap > .media-frame video {
+  aspect-ratio: 16 / 9;
+}
+
+main.wrap > .media-frame img,
+main.wrap > .media-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.media-frame:hover img,
+.media-frame:hover video {
+  transform: scale(1.02);
+}
+
 .media-frame img {
   width: 100%;
   object-fit: cover;
