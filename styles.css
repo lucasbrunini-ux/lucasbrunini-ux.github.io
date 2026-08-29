@@ -783,14 +783,17 @@ body.loaded .hero-title .line > span {
   clip-path: var(--chamfer);
 }
 
-.project-media img {
+.project-media img,
+.project-media video {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
   transition: transform 0.9s var(--ease);
 }
 
-.project-media:hover img {
+.project-media:hover img,
+.project-media:hover video {
   transform: scale(1.045);
 }
 
