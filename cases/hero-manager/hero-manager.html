@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASE • HERO MANAGER ✦ LUCAS BRUNINI</title>
+  <meta name="description" content="Case de UX/UI do Hero Manager, aplicativo mobile para gestão rápida e imersiva de fichas e campanhas de D&D 5ª Edição.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <span class="plus tl" aria-hidden="true">+</span>
+  <span class="plus tr" aria-hidden="true">+</span>
+  <span class="plus bl" aria-hidden="true">+</span>
+  <span class="plus br" aria-hidden="true">+</span>
+
+  <header>
+    <div class="wrap case-top">
+      <a class="back" href="../../index.html"><i>←</i> VOLTAR AO ÍNDICE</a>
+      <a class="logo" href="../../index.html"><b>▮</b> L.BRUNINI</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="case-hero reveal">
+      <span class="case-code">// CASE_04 — UX/UI · DESIGN DE PRODUTO</span>
+      <h1>Hero Manager</h1>
+      <p class="desc">Otimizando a gestão de fichas e campanhas de D&amp;D 5ª Edição para mestres e jogadores. Um app mobile que transforma horas de burocracia em minutos de jogo.</p>
+      <div class="meta-grid" aria-label="Dados do projeto">
+        <div class="meta-cell">CLIENTE<b>PROJETO PESSOAL</b></div>
+        <div class="meta-cell">PAPEL<b>UX/UI · PRODUTO · PESQUISA</b></div>
+        <div class="meta-cell">ANO<b>2026</b></div>
+        <div class="meta-cell">TIPO<b class="project">ESTUDO DE CASO</b></div>
+      </div>
+    </div>
+
+    <div class="media-frame reveal">
+      <img src="../../assets/imagens/hero-manager/hero-manager-capa.png" alt="Capa do Hero Manager com interface de ficha de personagem de D&D" fetchpriority="high">
+      <span class="mf-hud"><span>CASE_04 // HERO_MANAGER</span><span class="r">REC ●</span></span>
+    </div>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_A</span>
+      <h2>Sobre o projeto</h2>
+      <p>O <b>Hero Manager</b> é um aplicativo mobile para iOS e Android voltado a jogadores e mestres de <b>Dungeons &amp; Dragons 5ª Edição</b>. Ele reúne fichas de personagem, campanhas, sessões, inventário, magias e condições em uma experiência rápida, offline-first e imersiva.</p>
+      <p>O produto nasceu como um projeto pessoal e foi totalmente redesenhado após minha maturação profissional em UX/UI Design, aplicando pesquisa estruturada, testes de usabilidade e arquitetura da informação.</p>
+      <div class="tags" aria-label="Áreas do projeto"><span>UX/UI</span><span>DESIGN DE PRODUTO</span><span>DESIGN GRÁFICO</span><span>FIGMA</span><span>UX RESEARCH</span></div>
+    </section>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_B</span>
+      <h2>Problema e objetivos</h2>
+      <p>A ficha de personagem em papel ou PDF estático interrompe o ritmo da sessão entre rodadas de combate, anotações de condições, controle de PV, magias e inventário. Os apps existentes eram genéricos, burocráticos, pouco otimizados para toque e não atendiam bem condições, imunidades e descansos.</p>
+      <ul>
+        <li>Reduzir o tempo de gestão da ficha durante o jogo.</li>
+        <li>Criar uma identidade visual conectada à atmosfera de D&amp;D 5E.</li>
+        <li>Oferecer acesso rápido às informações mais usadas em combate.</li>
+        <li>Permitir gestão de múltiplas campanhas e personagens.</li>
+        <li>Entregar uma experiência mobile-first, intuitiva e imersiva.</li>
+      </ul>
+    </section>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_C</span>
+      <h2>Contexto e papel</h2>
+      <p>Atuei como <b>UX/UI Designer end-to-end</b>, responsável por pesquisa com usuários e concorrentes, arquitetura da informação, wireframes, protótipos, sistema visual, testes de usabilidade, iterações, handoff e documentação.</p>
+      <p><b>Ferramentas:</b> FigJam, Miro, Notion, Typeform, Figma, Principle, Maze, Lookback, Illustrator e Iconify.</p>
+    </section>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_D</span>
+      <h2>Processo de design</h2>
+      <p>O projeto foi conduzido pelo <b>Duplo Diamante</b>, alternando descoberta e definição antes de desenvolver e entregar uma solução validada para sessões reais de D&amp;D.</p>
+
+      <div class="phase" data-phase="PHASE_01 // DESCOBRIR">
+        <h3>Descobrir</h3>
+        <p>Conduzi entrevistas remotas com <b>10 jogadores e mestres</b>, um survey com <b>87 respondentes</b> e shadowing em <b>3 sessões</b> via Discord e Roll20.</p>
+        <p><b>78%</b> usavam ficha em papel ou PDF e <b>62%</b> já haviam abandonado apps por considerá-los complicados. O benchmark de D&amp;D Beyond, Roll20, Improved Initiative e Kobold Fight Club mostrou a oportunidade de simplificar a experiência mobile.</p>
+      </div>
+
+      <div class="phase" data-phase="PHASE_02 // DEFINIR">
+        <h3>Definir</h3>
+        <p><b>“Eu não quero abrir um app para gerenciar meu personagem. Eu quero abrir o app e voltar para o jogo em 2 segundos.”</b> — jogador entrevistado.</p>
+        <p>Esse insight orientou cinco prioridades: velocidade em combate, imersão, condições e descansos visíveis, legibilidade em pouca luz e suporte a múltiplas campanhas.</p>
+        <p><b>Larissa</b>, jogadora casual, precisava de acesso rápido a PV, condições e magias. <b>Ricardo</b>, mestre veterano, precisava alternar entre personagens e campanhas sem perder o foco na narrativa.</p>
+      </div>
+
+      <div class="phase" data-phase="PHASE_03 // DESENVOLVER">
+        <h3>Desenvolver</h3>
+        <p>Um workshop de <b>Crazy 8s</b> gerou 24 esboços em oito minutos. A solução convergiu para bottom navigation fixa, abas horizontais, cards de campanha e ações rápidas de combate.</p>
+        <p>Testes com 10 usuários substituíram a lista única por abas de Combate, Condições, Imunidades, Perícias, Magias, Inventário e Anotações.</p>
+      </div>
+
+      <div class="media-frame reveal">
+        <img src="../../assets/imagens/hero-manager/hero-manager-wireframe.png" alt="Wireframes das telas principais do Hero Manager">
+        <span class="mf-hud"><span>WIREFRAME // HERO_MANAGER</span><span class="r">REC ●</span></span>
+      </div>
+
+      <div class="phase" data-phase="PHASE_04 // ENTREGAR">
+        <h3>Entregar</h3>
+        <p>O sistema final combinou paleta inspirada em D&amp;D 5E, tipografia legível, componentes escaláveis e telas mobile-first. O resultado foi preparado para handoff e evolução futura.</p>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_G</span>
+      <h2>Design final e sistema visual</h2>
+      <p>O tema escuro reduz a fadiga visual em sessões noturnas e a paleta inspirada em D&amp;D 5E reforça a conexão emocional sem comprometer contraste e legibilidade.</p>
+      <ul>
+        <li class="visual-spec"><div><b>Tipografia:</b> Georama para títulos e interface, escolhida pela legibilidade em telas pequenas e pela flexibilidade entre pesos.</div><div class="media-frame gallery-trigger" data-full="../../assets/imagens/hero-manager/hero-manager-tipografia.png" tabindex="0" role="button" aria-label="Abrir tipografia do Hero Manager"><img src="../../assets/imagens/hero-manager/hero-manager-tipografia.png" alt="Tipografia do Hero Manager"><span class="mf-hud"><span>VISUAL_SYSTEM // TYPE</span><span class="r">REC ●</span></span></div></li>
+        <li class="visual-spec"><div><b>Paleta de cores:</b> vermelho D&amp;D para ações, dourado para acentos e recompensas, fundo escuro para reduzir fadiga em sessões noturnas.</div><div class="media-frame gallery-trigger" data-full="../../assets/imagens/hero-manager/hero-manager-cores.png" tabindex="0" role="button" aria-label="Abrir paleta de cores do Hero Manager"><img src="../../assets/imagens/hero-manager/hero-manager-cores.png" alt="Paleta de cores do Hero Manager"><span class="mf-hud"><span>VISUAL_SYSTEM // COLOR</span><span class="r">REC ●</span></span></div></li>
+        <li class="visual-spec"><div><b>Sistema de componentes:</b> botões, cards, inputs, chips, bottom navigation e modais de confirmação preparados para escala.</div><div class="media-frame gallery-trigger" data-full="../../assets/imagens/hero-manager/hero-manager-componentes.png" tabindex="0" role="button" aria-label="Abrir componentes do Hero Manager"><img src="../../assets/imagens/hero-manager/hero-manager-componentes.png" alt="Sistema de componentes do Hero Manager"><span class="mf-hud"><span>VISUAL_SYSTEM // COMPONENTS</span><span class="r">REC ●</span></span></div></li>
+      </ul>
+    </section>
+
+    <div class="grid-2 reveal">
+        <div class="media-frame gallery-trigger" data-full="../../assets/imagens/hero-manager/imagem-01-design-final.png" tabindex="0" role="button" aria-label="Abrir design final do Hero Manager 01"><img src="../../assets/imagens/hero-manager/imagem-01-design-final.png" alt="Tela final do Hero Manager 01"><span class="mf-hud"><span>UI // DESIGN_FINAL_01</span><span class="r">REC ●</span></span></div>
+        <div class="media-frame gallery-trigger" data-full="../../assets/imagens/hero-manager/imagem-02-design-final.png" tabindex="0" role="button" aria-label="Abrir design final do Hero Manager 02"><img src="../../assets/imagens/hero-manager/imagem-02-design-final.png" alt="Tela final do Hero Manager 02"><span class="mf-hud"><span>UI // DESIGN_FINAL_02</span><span class="r">REC ●</span></span></div>
+    </div>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_G</span>
+      <h2>Resultados — impacto</h2>
+      <div class="impact-layout">
+        <div class="media-frame gallery-trigger reveal" data-full="../../assets/imagens/hero-manager/hero-manager-mockup.png" tabindex="0" role="button" aria-label="Abrir mockup do Hero Manager"><img src="../../assets/imagens/hero-manager/hero-manager-mockup.png" alt="Mockup das telas mobile do Hero Manager"><span class="mf-hud"><span>IMPACT // FINAL_MOCKUP</span><span class="r">REC ●</span></span></div>
+        <div class="impact-copy">
+          <div class="results">
+            <div class="result"><b>4s</b><span>tempo para aplicar uma condição, contra 18s</span></div>
+            <div class="result"><b>2 cliques</b><span>para rolar atributo, contra 5</span></div>
+            <div class="result"><b>92%</b><span>de conclusão do onboarding, contra 64%</span></div>
+            <div class="result"><b>84 SUS</b><span>escala de usabilidade, contra 58</span></div>
+          </div>
+          <p>Após testes com 20 usuários em quatro sessões reais, o NPS passou de 32 para 71. O redesign transformou um app funcional, porém burocrático, em uma experiência rápida, imersiva e centrada no jogador.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="block-code">// SEC_H</span>
+      <h2>Aprendizados — reflexão</h2>
+      <div class="media-frame gallery-trigger reveal" data-full="../../assets/imagens/hero-manager/hero-manager-evolucao.png" tabindex="0" role="button" aria-label="Abrir evolução do Hero Manager"><img src="../../assets/imagens/hero-manager/hero-manager-evolucao.png" alt="Evolução das telas do Hero Manager"><span class="mf-hud"><span>LEARNING // EVOLUCAO</span><span class="r">REC ●</span></span></div>
+      <p>O contexto de uso guiou decisões de contraste, toque e hierarquia. A pesquisa também mostrou que remover uma ação rara do menu libera espaço para o que realmente mantém o jogador na mesa. O Double Diamond trouxe ritmo para alternar exploração e foco sem antecipar a solução.</p>
+      <p>Próximos passos: modo Mestre com tracker de iniciativa, sincronização em nuvem, compartilhamento de fichas, integração com SRD oficial e temas personalizáveis.</p>
+    </section>
+
+    <div class="gallery-modal" id="designModal" aria-hidden="true">
+      <div class="gallery-modal-panel">
+        <div class="gallery-meta" id="galleryMeta">CASE_04 // HERO_MANAGER</div>
+        <button class="gallery-close" type="button" aria-label="Fechar imagem">✕</button>
+        <button class="gallery-nav gallery-prev" type="button" aria-label="Imagem anterior">←</button>
+        <div class="gallery-counter" id="galleryCounter">01 / 07</div>
+        <img id="galleryImage" src="" alt="Visualização em tela cheia do Hero Manager">
+        <button class="gallery-nav gallery-next" type="button" aria-label="Próxima imagem">→</button>
+      </div>
+    </div>
+
+    <div class="case-nav reveal" aria-label="Navegação de casos">
+      <a href="../../index.html#projetos"><span>// BACK</span><b>Voltar aos cases</b></a>
+      <a href="../../index.html#contato" class="next"><span>// CONTATO</span><b>Falar com Lucas</b></a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-wrap">
+      <a class="cta" href="../../index.html#projetos">VER TODOS OS CASES</a>
+      <span class="info">HERO MANAGER // UX/UI · D&amp;D 5E · MOBILE</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+
+      var modal = document.getElementById('designModal');
+      var modalImage = document.getElementById('galleryImage');
+      var counter = document.getElementById('galleryCounter');
+      var meta = document.getElementById('galleryMeta');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-trigger'));
+      var currentIndex = 0;
+      function updateGallery() {
+        modalImage.src = cards[currentIndex].getAttribute('data-full');
+        counter.textContent = String(currentIndex + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
+        meta.textContent = 'CASE_04 // HERO_MANAGER_' + String(currentIndex + 1).padStart(2, '0');
+      }
+      function openGallery(index) {
+        if (!cards.length) return;
+        currentIndex = (index + cards.length) % cards.length;
+        updateGallery();
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeGallery() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      cards.forEach(function (card, index) {
+        card.addEventListener('click', function () { openGallery(index); });
+        card.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openGallery(index); }
+        });
+      });
+      document.querySelector('.gallery-close').addEventListener('click', closeGallery);
+      document.querySelector('.gallery-prev').addEventListener('click', function () { openGallery(currentIndex - 1); });
+      document.querySelector('.gallery-next').addEventListener('click', function () { openGallery(currentIndex + 1); });
+      modal.addEventListener('click', function (event) { if (event.target === modal) closeGallery(); });
+      document.addEventListener('keydown', function (event) {
+        if (!modal.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeGallery();
+        if (event.key === 'ArrowLeft') openGallery(currentIndex - 1);
+        if (event.key === 'ArrowRight') openGallery(currentIndex + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

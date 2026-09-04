@@ -663,12 +663,22 @@ main.wrap > .media-frame video {
 }
 
 .case-nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 130px;
   padding: 1.6rem 1.4rem;
   font-family: var(--font-m);
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   color: var(--mut);
   transition: background 0.3s, color 0.3s;
+}
+
+.case-nav a span {
+  display: block;
+  letter-spacing: 0.2em;
+  color: var(--red);
 }
 
 .case-nav a b {

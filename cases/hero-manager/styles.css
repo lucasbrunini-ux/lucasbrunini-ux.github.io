@@ -1,0 +1,45 @@
+@import url("../mobifarma/styles.css");
+
+:root {
+  --red: #e62e2d;
+  --amber: #f2c94c;
+}
+
+.case-nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 130px;
+}
+
+.impact-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, .85fr) minmax(0, 1.15fr);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  align-items: center;
+}
+
+.impact-layout > .media-frame {
+  margin-bottom: 0;
+}
+
+.impact-layout > .media-frame img {
+  width: 100%;
+  aspect-ratio: 0.92 / 1;
+  object-fit: contain;
+  background: var(--bg2);
+}
+
+.impact-copy .results {
+  margin-top: 0;
+}
+
+.impact-copy p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .impact-layout {
+    grid-template-columns: 1fr;
+  }
+}
