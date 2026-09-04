@@ -592,46 +592,58 @@ main.wrap > .media-frame video,
 }
 
 .case-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 0 0 3rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  margin: 4rem 0;
 }
 
 .case-nav a {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  min-width: 180px;
-  color: var(--mut);
+  justify-content: center;
+  min-height: 130px;
+  padding: 1.6rem 1.4rem;
   font-family: var(--font-m);
   font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  transition: color 0.25s ease;
+  letter-spacing: 0.14em;
+  color: var(--mut);
+  transition: background 0.3s, color 0.3s;
 }
 
-.case-nav a b {
-  color: var(--txt);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  font-family: var(--font-b);
-  font-weight: 500;
-}
-
-.case-nav a:hover {
+.case-nav a span {
+  display: block;
+  letter-spacing: 0.2em;
   color: var(--red);
 }
 
-.case-nav .next {
+.case-nav a b {
+  display: block;
+  font-family: var(--font-d);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--txt);
+  margin-top: 0.5rem;
+}
+
+.case-nav a:hover {
+  background: var(--bg2);
+  color: var(--txt);
+}
+
+.case-nav a:hover b {
+  color: var(--red);
+}
+
+.case-nav a.next {
   text-align: right;
+  border-left: 1px solid var(--line);
 }
 
 footer {
-  border-top: 1px solid var(--line);
-  padding: 1.2rem 0 3rem;
+  border-top: 1px solid var(--line2);
+  padding: 2rem 0 3rem;
 }
 
 .footer-wrap {
@@ -645,9 +657,17 @@ footer {
 .cta {
   font-family: var(--font-m);
   font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  color: var(--red);
-  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: var(--red);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  clip-path: var(--chamfer);
+  transition: transform 0.3s var(--ease), background 0.3s;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  background: #d00036;
 }
 
 .info {
@@ -678,10 +698,12 @@ footer {
   }
 
   .case-nav {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
-  .case-nav .next {
+  .case-nav a.next {
+    border-left: none;
+    border-top: 1px solid var(--line);
     text-align: left;
   }
 
