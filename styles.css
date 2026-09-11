@@ -184,17 +184,19 @@ h4 {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 80;
-  padding-top: 18px;
-  transition: padding-top 0.35s var(--ease), transform 0.35s var(--ease);
+  background: rgba(12, 12, 16, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
 }
 
 header.scrolled {
-  padding-top: 12px;
+  background: rgba(12, 12, 16, 0.98);
 }
 
 .nav {
@@ -202,20 +204,19 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  background: rgba(14, 14, 17, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 999px;
-  padding: 0 18px 0 22px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(8px);
-  transition: background 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 clamp(20px, 4vw, 48px);
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: none;
 }
 
 header.scrolled .nav {
-  background: rgba(14, 14, 17, 0.72);
-  border-color: var(--line);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
-  transform: translateY(2px);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .logo {
