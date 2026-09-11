@@ -36,7 +36,9 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top, rgba(229, 57, 53, 0.1), transparent 22%),
+    linear-gradient(180deg, #0e0e11 0%, #101217 100%);
   color: var(--txt);
   font-family: var(--font-b);
   font-size: 16px;
@@ -182,19 +184,19 @@ h4 {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 80;
-  border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s;
+  background: rgba(12, 12, 16, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
 }
 
 header.scrolled {
-  background: rgba(14, 14, 17, 0.88);
-  backdrop-filter: blur(10px);
-  border-color: var(--line);
+  background: rgba(12, 12, 16, 0.98);
 }
 
 .nav {
@@ -202,6 +204,19 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 clamp(20px, 4vw, 48px);
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: none;
+}
+
+header.scrolled .nav {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .logo {
@@ -303,6 +318,10 @@ header.scrolled {
   .burger {
     display: flex;
   }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
 }
 
 .menu-overlay {
@@ -373,12 +392,13 @@ header.scrolled {
   color: var(--mut);
 }
 
+
 .hero {
   min-height: 100svh;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 130px 0 70px;
+  padding: 30px 0 70px;
   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 88px 88px;
   background-position: center;
@@ -387,29 +407,10 @@ header.scrolled {
 .hero-frame {
   position: relative;
   padding: clamp(20px, 3vw, 40px);
-}
-
-.hero-frame::before,
-.hero-frame::after {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--red);
-}
-
-.hero-frame::before {
-  top: 0;
-  left: 0;
-  border-right: none;
-  border-bottom: none;
-}
-
-.hero-frame::after {
-  bottom: 0;
-  right: 0;
-  border-left: none;
-  border-top: none;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .hero-kicker {
@@ -492,6 +493,38 @@ body.loaded .hero-title .line > span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   border: 1px solid var(--line);
+  background: rgba(15, 15, 19, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+}
+
+.hero-metrics div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(17, 17, 20, 0.72);
+}
+
+.hero-metrics span {
+  font-family: var(--font-d);
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  color: var(--txt);
+}
+
+.hero-metrics small {
+  font-family: var(--font-m);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: var(--mut);
+  text-transform: uppercase;
 }
 
 .hud-cell {
@@ -800,6 +833,7 @@ body.loaded .hero-title .line > span {
   background: var(--bg2);
   border: 1px solid var(--line2);
   clip-path: var(--chamfer);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
 }
 
 .project-media img,
@@ -865,6 +899,10 @@ body.loaded .hero-title .line > span {
   border-top: 1px solid var(--line);
   margin-top: 1rem;
   padding-top: 1rem;
+}
+
+.project:hover .project-info h3 {
+  color: var(--red);
 }
 
 .project-top {
@@ -935,6 +973,13 @@ body.loaded .hero-title .line > span {
   padding: 1.4rem 1.2rem;
   box-shadow: var(--shadow-soft);
   min-height: 220px;
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229, 57, 53, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .tool-tag {
@@ -1390,7 +1435,7 @@ footer {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--line);
   border-bottom: none;
   margin-top: clamp(56px, 8vw, 96px);
@@ -1413,7 +1458,7 @@ footer {
   transition: background 0.3s, color 0.3s;
 }
 
-.contact-grid a:nth-child(4n) {
+.contact-grid a:nth-child(3n) {
   border-right: none;
 }
 
