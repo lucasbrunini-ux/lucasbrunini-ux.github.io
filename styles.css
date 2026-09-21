@@ -47,6 +47,16 @@ body {
   overflow-x: hidden;
 }
 
+p,
+.about-right p,
+.project-info p,
+.tool-card p,
+.step p,
+.panel p {
+  text-align: justify;
+  text-wrap: pretty;
+}
+
 ::selection {
   background: var(--red);
   color: #fff;
