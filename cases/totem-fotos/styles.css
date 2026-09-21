@@ -35,6 +35,17 @@ body {
   overflow-x: hidden;
 }
 
+p,
+.top-note p,
+.block p,
+.phase p,
+.csd-cell p,
+.result span,
+.persona-grid div {
+  text-align: justify;
+  text-wrap: pretty;
+}
+
 ::selection {
   background: var(--red);
   color: #fff;
@@ -163,7 +174,6 @@ header {
 
 .case-hero .desc {
   color: var(--mut);
-  max-width: 42rem;
   font-size: 1.05rem;
   margin-bottom: 2rem;
 }
@@ -323,7 +333,6 @@ main.wrap > .media-frame video {
 .block p {
   color: var(--mut);
   margin-bottom: 1rem;
-  max-width: 46rem;
 }
 
 .block p b {
