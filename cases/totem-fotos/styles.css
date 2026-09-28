@@ -41,7 +41,8 @@ p,
 .phase p,
 .csd-cell p,
 .result span,
-.persona-grid div {
+.persona-grid div,
+.final-block p {
   text-align: justify;
   text-wrap: pretty;
 }
@@ -213,7 +214,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   border: 1px solid var(--line);
-  margin-bottom: 3rem;
+  margin-bottom: 1.2rem;
 }
 
 .meta-cell {
@@ -695,6 +696,50 @@ main.wrap > .media-frame video {
   text-transform: uppercase;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  margin-top: 0.6rem;
+}
+
+.contact-grid a {
+  padding: 1.5rem 1.1rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-m);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--mut);
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-grid a:nth-child(3n) {
+  border-right: none;
+}
+
+.contact-grid a b {
+  display: block;
+  color: var(--txt);
+  font-weight: 400;
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+}
+
+.contact-grid a:hover {
+  background: var(--bg2);
+  color: var(--txt);
+}
+
+.contact-grid a:hover b {
+  color: var(--green);
+}
+
+.contact-grid + .media-frame {
+  margin-top: 1rem;
+}
+
 .case-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -788,6 +833,10 @@ footer .info {
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   color: var(--mut);
+}
+
+.final-block p {
+  text-align: justify;
 }
 
 .reveal {
