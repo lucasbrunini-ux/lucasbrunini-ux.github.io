@@ -27,8 +27,8 @@
 <main class="wrap">
   <section class="case-hero" aria-labelledby="caseTitle">
     <span class="case-code">// CASE_03 — UX/UI · DESIGN DE PRODUTO</span>
-    <h1 id="caseTitle">FORJA — fichas de RPG</h1>
-    <p class="desc">Um conceito de produto para reunir fichas de diferentes sistemas e dar a mestres uma forma acessível de transformar regras próprias em experiências jogáveis.</p>
+    <h1 id="caseTitle">App FORJA</h1>
+    <p class="desc">Um conceito de app para reunir fichas de diferentes sistemas e dar a mestres uma forma acessível de transformar regras próprias em experiências jogáveis.</p>
     <a class="cta-main" href="#design-final">EXPLORAR A SOLUÇÃO <span aria-hidden="true">↓</span></a>
     <aside class="top-note" aria-label="Resumo executivo do case">
       <span>Desafio</span>
@@ -55,7 +55,7 @@
   </div>
 
   <section class="block reveal">
-    <span class="block-code">// SEC_A — CONTEXTO</span>
+    <span class="block-code">// SEC_A — PROBLEMA</span>
     <h2>Uma experiência fragmentada</h2>
     <p>Quem joga mais de um sistema costuma manter fichas em formatos diferentes: um aplicativo para D&amp;D, uma planilha para outro jogo e um PDF para campanhas autorais. Essa troca aumenta o esforço para consultar regras, atualizar valores e preservar o histórico dos personagens.</p>
     <p>Para mestres que criam sistemas próprios, o problema se amplia: a ficha precisa acompanhar regras específicas, mas montar e manter um PDF editável exige trabalho manual e não oferece automação ou uma experiência consistente para o grupo.</p>
@@ -75,7 +75,66 @@
   </section>
 
   <section class="block reveal">
-    <span class="block-code">// SEC_C — OBJETIVOS</span>
+    <span class="block-code">// SEC_C — BENCHMARK</span>
+    <h2>Onde as soluções atuais deixam lacunas</h2>
+    <p>A análise comparou ferramentas de ficha, suporte a sistemas e flexibilidade para entender o espaço de oportunidade da FORJA: reunir o que funciona sem herdar a limitação de uma plataforma dedicada a um único jogo.</p>
+    <div class="table-wrap">
+      <table class="case-table">
+        <thead><tr><th>Referência</th><th>O que atende bem</th><th>Oportunidade identificada</th></tr></thead>
+        <tbody>
+          <tr><td>D&amp;D Beyond</td><td>Fichas oficiais completas e automação de regras.</td><td>Foco em D&amp;D e conteúdo sujeito a paywall.</td></tr>
+          <tr><td>Pathbuilder</td><td>Montagem detalhada de personagens para Pathfinder 2e.</td><td>Atende um único sistema e tem interface datada.</td></tr>
+          <tr><td>Improved Initiative</td><td>Ferramentas úteis para combate e iniciativa.</td><td>Não cobre a gestão completa de fichas.</td></tr>
+          <tr><td>Fichas &amp; Dados</td><td>Comunidade brasileira e repertório local.</td><td>Interface confusa e poucos sistemas disponíveis.</td></tr>
+          <tr><td>Notion / planilhas</td><td>Estrutura flexível para organizar qualquer sistema.</td><td>Configuração manual, sem rolagens ou automação nativa.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-strip"><b>GAP DE PRODUTO</b><span>Unir suporte multi-sistema, criação acessível e automações úteis em uma interface moderna.</span></div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_D — ENTREVISTAS QUALITATIVAS</span>
+    <h2>Entender o que acontece antes e durante a sessão</h2>
+    <p>Foram ouvidas oito pessoas entre 18 e 35 anos: cinco jogadores, dois mestres e uma pessoa que exerce os dois papéis. Todas tinham experiência com pelo menos dois sistemas. As conversas exploraram organização de fichas, criação de sistemas próprios e consulta de regras durante o jogo.</p>
+    <div class="quote-grid">
+      <blockquote>“Eu uso um app pra D&amp;D, planilha pra Tormenta e papel pro meu sistema caseiro. É um caos.”<span>JOGADOR MULTI-SISTEMA</span></blockquote>
+      <blockquote>“Meu mestre criou um sistema próprio e a gente usa PDF editável. É horrível.”<span>JOGADORA DE SISTEMA AUTORAL</span></blockquote>
+      <blockquote>“Na mesa do meu amigo o Wi-Fi é péssimo.”<span>JOGADOR / NECESSIDADE OFFLINE</span></blockquote>
+    </div>
+    <h3 class="subhead">Sinais quantitativos do material de pesquisa</h3>
+    <div class="metric-grid">
+      <div><b>73%</b><span>jogam mais de um sistema</span></div>
+      <div><b>61%</b><span>já criaram ou jogaram homebrew</span></div>
+      <div><b>84%</b><span>prefeririam uma ferramenta unificada</span></div>
+      <div><b>58%</b><span>já abandonaram um app por complexidade</span></div>
+    </div>
+    <p class="source-note"><b>Leitura:</b> as entrevistas ajudam a explicar as fricções; os percentuais do survey indicam recorrência no material do case, sem atribuir a eles uma amostra que não foi documentada.</p>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_E — PERSONAS</span>
+    <h2>Dois modos de usar a mesma plataforma</h2>
+    <div class="persona-cards">
+      <article class="persona-card">
+        <span class="persona-id">PERSONA_01 / JOGADOR</span>
+        <h3>Lucas Andrade</h3>
+        <p class="persona-role">25 ANOS · BELO HORIZONTE · 90% JOGADOR</p>
+        <p>Joga D&amp;D, Tormenta20 e Call of Cthulhu em campanhas simultâneas. Alterna entre celular Android, PDFs e planilhas e quer chegar rápido aos dados de cada personagem, inclusive quando está offline.</p>
+        <div class="persona-needs"><b>PRECISA</b><span>Centralizar fichas, consultar regras e preservar personagens sem depender de conexão.</span><b>FRUSTRAÇÃO</b><span>Trocar de ferramenta e perder tempo procurando cálculos no meio da sessão.</span></div>
+      </article>
+      <article class="persona-card">
+        <span class="persona-id">PERSONA_02 / MESTRA</span>
+        <h3>Camila Ferreira</h3>
+        <p class="persona-role">30 ANOS · CURITIBA · 70% MESTRA</p>
+        <p>Desenvolve Crônicas do Sul, um sistema próprio inspirado no folclore brasileiro. Mantém fichas em PDF e precisa distribuir atualizações sem refazer arquivos ou corrigir preenchimentos manualmente.</p>
+        <div class="persona-needs"><b>PRECISA</b><span>Criar campos, fórmulas e identidade visual sem programar, e compartilhar fichas atualizadas.</span><b>FRUSTRAÇÃO</b><span>Ferramentas genéricas não acompanham regras e linguagem visual do seu sistema.</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_F — OBJETIVOS</span>
     <h2>O que a solução precisava entregar</h2>
     <ul>
       <li>Centralizar personagens de sistemas diferentes em uma biblioteca pesquisável.</li>
@@ -87,7 +146,87 @@
   </section>
 
   <section class="block reveal">
-    <span class="block-code">// SEC_D — PROCESSO</span>
+    <span class="block-code">// SEC_G — JORNADA DO USUÁRIO</span>
+    <h2>Da descoberta à evolução do personagem</h2>
+    <p>A jornada de Lucas mostra como a promessa do produto precisa se confirmar em cada etapa: da dúvida sobre suporte aos sistemas até o uso rápido da ficha durante a sessão.</p>
+    <div class="journey-grid">
+      <article><span>01 / DESCOBERTA</span><h3>Considera testar</h3><em class="journey-emotion">EMOÇÃO / CURIOSO</em><p>“Será que suporta meu sistema?”</p><b>Mostrar sistemas e exemplos reais.</b></article>
+      <article><span>02 / ONBOARDING</span><h3>Começa a usar</h3><em class="journey-emotion">EMOÇÃO / ANIMADO</em><p>Receio de um cadastro longo.</p><b>Levar ao primeiro valor em poucos passos.</b></article>
+      <article><span>03 / CRIAÇÃO</span><h3>Forja a ficha</h3><em class="journey-emotion">EMOÇÃO / CONFUSO</em><p>Muitos campos podem confundir.</p><b>Guiar com templates e dicas contextuais.</b></article>
+      <article><span>04 / SESSÃO</span><h3>Consulta e rola</h3><em class="journey-emotion">EMOÇÃO / ALIVIADO</em><p>Conexão instável e regras dispersas.</p><b>Oferecer modo offline e rolagem integrada.</b></article>
+      <article><span>05 / EVOLUÇÃO</span><h3>Atualiza o personagem</h3><em class="journey-emotion">EMOÇÃO / SATISFEITO</em><p>Quer levar outra campanha para o app.</p><b>Expor sistemas e criação própria.</b></article>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_H — OPORTUNIDADES POR FASE</span>
+    <h2>Transformar fricções em decisões de produto</h2>
+    <div class="opportunity-list">
+      <div><b>DESCOBERTA</b><span>Apresentar sistemas suportados e deixar claro que a experiência não se limita a um único RPG.</span></div>
+      <div><b>ONBOARDING</b><span>Usar orientação contextual e reduzir o tempo até a primeira ficha.</span></div>
+      <div><b>CRIAÇÃO</b><span>Começar por templates e revelar opções avançadas conforme a necessidade.</span></div>
+      <div><b>SESSÃO</b><span>Manter rolagens, atributos e recursos acessíveis, com suporte offline.</span></div>
+      <div><b>EVOLUÇÃO</b><span>Dar visibilidade a novos sistemas e ao atalho “forjar meu próprio sistema”.</span></div>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_I — ARQUITETURA DE INFORMAÇÃO</span>
+    <h2>Cinco áreas para tarefas recorrentes</h2>
+    <p>A navegação principal mantém as ações críticas a até três níveis de profundidade e separa a gestão das fichas das ferramentas de criação.</p>
+    <div class="ia-grid">
+      <article><b>01 / HOME</b><span>Fichas recentes<br>Nova ficha<br>Rolar dados</span></article>
+      <article><b>02 / FICHAS</b><span>Filtro por sistema<br>Busca por personagem<br>Grade ou lista<br>Atributos · Habilidades · Inventário · Notas · Combate</span></article>
+      <article><b>03 / DADOS</b><span>d4 a d100 e dados customizados<br>Fórmulas<br>Histórico de rolagens</span></article>
+      <article><b>04 / FORJA</b><span>Sistemas oficiais e comunidade<br>Campos, fórmulas e tema<br>Prévia · Publicação · Link</span></article>
+      <article><b>05 / PERFIL</b><span>Preferências e notificações<br>Offline e backup<br>Idioma · Sistemas criados</span></article>
+    </div>
+    <p class="ia-note"><b>Detalhe da ficha:</b> o rolador também aparece como painel contextual para evitar que o usuário abandone a tarefa atual.</p>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_J — USER FLOWS</span>
+    <h2>Três tarefas, três caminhos claros</h2>
+    <div class="flow-cards">
+      <article><span>FLOW_01 / SISTEMA EXISTENTE</span><h3>Criar uma ficha</h3><p>Home <i>→</i> Nova ficha <i>→</i> Sistema <i>→</i> Nome, raça e classe <i>→</i> Atributos (rolagem ou point buy) <i>→</i> Habilidades e perícias <i>→</i> Histórico e equipamento <i>→</i> Revisar e salvar.</p></article>
+      <article><span>FLOW_02 / SISTEMA AUTORAL</span><h3>Forjar um sistema</h3><p>Home <i>→</i> Forja <i>→</i> Nome e tema <i>→</i> Adicionar campos e seções <i>→</i> Prévia <i>→</i> Salvar sistema <i>→</i> Criar primeira ficha.</p></article>
+      <article><span>FLOW_03 / DURANTE A SESSÃO</span><h3>Resolver uma ação</h3><p>Fichas <i>→</i> Personagem <i>→</i> Atributo ou perícia <i>→</i> Rolagem automática <i>→</i> Registrar resultado e atualizar recursos.</p></article>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_K — DESIGN SYSTEM</span>
+    <h2>Uma forja visual, legível em contexto de jogo</h2>
+    <p>A identidade combina carvão e ferro como base, brasa para ações prioritárias e verde para estados positivos. A cor temática pode variar por sistema sem mudar os padrões de navegação e leitura.</p>
+    <div class="palette-grid">
+      <div><i style="--swatch:#0F0E0D"></i><b>CARVÃO</b><code>#0F0E0D</code></div>
+      <div><i style="--swatch:#241E18"></i><b>FERRO</b><code>#241E18</code></div>
+      <div><i style="--swatch:#2E2720"></i><b>FERRO MÉDIO</b><code>#2E2720</code></div>
+      <div><i style="--swatch:#E85D04"></i><b>BRASA</b><code>#E85D04</code></div>
+      <div><i style="--swatch:#D4A574"></i><b>DOURADO</b><code>#D4A574</code></div>
+      <div><i style="--swatch:#FFBA08"></i><b>FAÍSCA</b><code>#FFBA08</code></div>
+      <div><i style="--swatch:#F5F1E8"></i><b>TEXTO</b><code>#F5F1E8</code></div>
+      <div><i style="--swatch:#A89F91"></i><b>TEXTO SEC.</b><code>#A89F91</code></div>
+      <div><i style="--swatch:#6B6358"></i><b>TEXTO MUDO</b><code>#6B6358</code></div>
+      <div><i style="--swatch:#4ADE80"></i><b>CURA</b><code>#4ADE80</code></div>
+      <div><i style="--swatch:#F87171"></i><b>DANO</b><code>#F87171</code></div>
+    </div>
+    <div class="system-specs">
+      <article><b>TIPOGRAFIA</b><span>Alexandria para títulos; Inter para leitura; JetBrains Mono para valores, fórmulas e estados.</span></article>
+      <article><b>COMPONENTES</b><span>Character Card, Stat Block, Dice Button, System Badge, Field Input, Wizard Stepper e Bottom Sheet.</span></article>
+      <article><b>IDENTIDADE</b><span>Dado em chamas, faíscas, “F” estilizado transmitindo a firmeza de um martelo ou forja; linguagem segura e objetiva nas instruções.</span></article>
+    </div>
+    <div class="theme-row"><b>TEMA POR SISTEMA</b><span>D&amp;D / brasa e vermelho</span><span>Call of Cthulhu / carvão e azul petróleo</span><span>Tormenta / brasa e laranja</span><span>Homebrew / cores do criador</span></div>
+    <figure class="brand-board">
+      <button class="screen-card brand-trigger" type="button" data-full="../../assets/imagens/forja/marca.png" data-label="MARCA" aria-label="Ampliar prancha de identidade visual da FORJA">
+        <img src="../../assets/imagens/forja/marca.png" alt="Prancha da marca FORJA com logotipo, ícone, aplicações mobile, textura e paleta de cores" loading="lazy">
+        <span class="screen-caption">BRANDING // IDENTIDADE VISUAL E APLICAÇÕES</span>
+      </button>
+    </figure>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_L — PROCESSO</span>
     <h2>Do problema ao fluxo de produto</h2>
     <p>O processo foi organizado em quatro fases, conectando levantamento de necessidades, arquitetura, prototipação e avaliação preliminar.</p>
 
@@ -120,14 +259,14 @@
   </section>
 
   <section class="block reveal" id="wireframes">
-    <span class="block-code">// SEC_E — WIREFRAMES</span>
+    <span class="block-code">// SEC_M — WIREFRAMES</span>
     <h2>Estrutura antes do acabamento</h2>
     <p>Os wireframes organizam a jornada principal e validam hierarquia, navegação e ações antes da camada visual. As 13 telas estão agrupadas em lotes de seis para facilitar a leitura.</p>
     <div class="screen-gallery" data-screen-gallery="wireframes" data-prefix="wf-" data-title="WIREFRAME" data-count="13"></div>
   </section>
 
   <section class="block reveal" id="design-final">
-    <span class="block-code">// SEC_F — DESIGN FINAL</span>
+    <span class="block-code">// SEC_N — DESIGN FINAL</span>
     <h2>Uma ficha para cada sistema</h2>
     <p>A interface transforma a estrutura em uma experiência mobile com biblioteca multi-sistema, criação guiada e recursos de mesa. A identidade de cada jogo pode variar sem perder consistência nos fluxos essenciais.</p>
     <div class="feature-grid final-features">
@@ -151,7 +290,7 @@
   </div>
 
   <section class="block reveal">
-    <span class="block-code">// SEC_G — RESULTADOS</span>
+    <span class="block-code">// SEC_O — RESULTADOS</span>
     <h2>O que a avaliação indicou</h2>
     <p>Os números abaixo são resultados de avaliação de protótipo documentados no material do projeto, não métricas de um produto lançado. A amostra de cinco participantes é pequena; portanto, os dados servem como sinais para priorização, não como evidência de impacto em escala.</p>
     <div class="results">
@@ -164,7 +303,7 @@
   </section>
 
   <section class="block reveal">
-    <span class="block-code">// SEC_H — APRENDIZADOS</span>
+    <span class="block-code">// SEC_P — APRENDIZADOS</span>
     <h2>Flexibilidade precisa de orientação</h2>
     <p>O principal aprendizado foi que personalização e simplicidade não são objetivos opostos, desde que a complexidade apareça no momento certo. Templates, pré-visualização e explicações contextuais ajudam a transformar liberdade de configuração em uma sequência de decisões menores.</p>
     <p>Também ficou claro que o contexto da mesa deve orientar a hierarquia da interface: atributos, recursos e ações frequentes precisam ser acessíveis sem navegar por uma estrutura extensa. Para uma próxima etapa, o conceito exigiria validação com mais perfis e cenários reais, além de definição técnica para sincronização offline e proteção dos dados.</p>
@@ -173,7 +312,7 @@
   <section class="block reveal final-block">
     <span class="block-code">// END_OF_FILE</span>
     <h2>Obrigado!</h2>
-    <p>A FORJA explora como uma ferramenta de produto pode tornar fichas de RPG mais acessíveis sem apagar as particularidades de cada sistema. Obrigado por acompanhar o processo. Estou aberto a conversar sobre decisões de UX, prototipação e design de produto.</p>
+    <p>A Forja é o estágio final (até o momento) do meu primeiro case de UX UI, que em seu embrião se chamava Hero Manager. Desde a sua concepção tanto eu quanto o projeto mudaram muito, desde a abordagem de UX UI quanto a visão de mundo como designer e artista. Espero que gostem e estou aberto a conversar sobre decisões de UX, prototipação, design e da minha evolução em todos esses aspectos.</p>
     <div class="tags final-tags">
       <span>FORJA · CONCEITO DE PRODUTO</span>
       <span>UX/UI · DESIGN DE PRODUTO</span>
@@ -296,6 +435,16 @@
       });
     });
   });
+
+  var brandTrigger = document.querySelector('.brand-trigger');
+  if(brandTrigger){
+    brandTrigger.addEventListener('click', function(){
+      lastTrigger = brandTrigger;
+      activeCards = [brandTrigger];
+      activeTitle = 'BRANDING';
+      openGallery(0);
+    });
+  }
 
   closeButton.addEventListener('click', closeGallery);
   previousButton.addEventListener('click', function(){ openGallery(currentIndex - 1); });
