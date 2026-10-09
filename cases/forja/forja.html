@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FORJA: conceito de produto para organizar fichas de RPG de diferentes sistemas e permitir a criação de sistemas próprios.">
+<title>FORJA — FICHAS DE RPG ✦ LUCAS BRUNINI</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<span class="plus tl" aria-hidden="true">+</span><span class="plus tr" aria-hidden="true">+</span><span class="plus bl" aria-hidden="true">+</span><span class="plus br" aria-hidden="true">+</span>
+
+<header>
+  <div class="wrap case-top">
+    <a class="back" href="../../index.html#projetos"><i>←</i> VOLTAR AO ÍNDICE</a>
+    <a class="logo" href="../../index.html"><b></b> L.BRUNINI</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="case-hero" aria-labelledby="caseTitle">
+    <span class="case-code">// CASE_03 — UX/UI · DESIGN DE PRODUTO</span>
+    <h1 id="caseTitle">FORJA — fichas de RPG</h1>
+    <p class="desc">Um conceito de produto para reunir fichas de diferentes sistemas e dar a mestres uma forma acessível de transformar regras próprias em experiências jogáveis.</p>
+    <a class="cta-main" href="#design-final">EXPLORAR A SOLUÇÃO <span aria-hidden="true">↓</span></a>
+    <aside class="top-note" aria-label="Resumo executivo do case">
+      <span>Desafio</span>
+      <p>Jogadores alternam entre aplicativos, planilhas e PDFs; criadores de sistemas próprios não encontram ferramentas flexíveis sem uma curva de configuração excessiva. A FORJA propõe uma biblioteca multi-sistema com um editor guiado, automações e recursos para uso à mesa.</p>
+    </aside>
+    <div class="meta-grid">
+      <div class="meta-cell">CLIENTE<b>PROJETO AUTORAL</b></div>
+      <div class="meta-cell">PAPEL<b>UX/UI · DESIGN DE PRODUTO</b></div>
+      <div class="meta-cell">ANO<b>2026</b></div>
+      <div class="meta-cell">TIPO<b class="study">CONCEITO / PROTÓTIPO</b></div>
+      <div class="meta-cell">STATUS<b>NÃO PUBLICADO</b></div>
+    </div>
+  </section>
+
+  <div class="contact-grid reveal" style="--d:.2s">
+    <a href="mailto:brunini.lucas@gmail.com">EMAIL<b>brunini.lucas@gmail.com</b></a>
+    <a href="https://wa.me/5511959798798" target="_blank" rel="noopener noreferrer">TEL (WHATS APP)<b>(11) 95979-8798</b></a>
+    <a href="https://linkedin.com/in/lucasbrunini" target="_blank" rel="noopener noreferrer">LINKEDIN<b>/in/lucasbrunini ↗</b></a>
+  </div>
+
+  <div class="media-frame reveal forja-cover">
+    <img src="../../assets/imagens/forja/forja-capa.png" alt="Capa da FORJA com telas mobile da biblioteca de fichas e da identidade do produto">
+    <span class="mf-hud"><span>CASE_03 // VISÃO_DO_PRODUTO</span><span class="r">CONCEPT ●</span></span>
+  </div>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_A — CONTEXTO</span>
+    <h2>Uma experiência fragmentada</h2>
+    <p>Quem joga mais de um sistema costuma manter fichas em formatos diferentes: um aplicativo para D&amp;D, uma planilha para outro jogo e um PDF para campanhas autorais. Essa troca aumenta o esforço para consultar regras, atualizar valores e preservar o histórico dos personagens.</p>
+    <p>Para mestres que criam sistemas próprios, o problema se amplia: a ficha precisa acompanhar regras específicas, mas montar e manter um PDF editável exige trabalho manual e não oferece automação ou uma experiência consistente para o grupo.</p>
+    <div class="callout-grid">
+      <div><b>FRAGMENTAÇÃO</b><span>Personagens distribuídos entre apps, planilhas e arquivos.</span></div>
+      <div><b>FRICÇÃO À MESA</b><span>Consulta e cálculo interrompem o ritmo da sessão.</span></div>
+      <div><b>POUCA AUTONOMIA</b><span>Sistemas autorais dependem de soluções improvisadas.</span></div>
+    </div>
+    <p class="source-note"><b>Enquadramento:</b> projeto conceitual autoral. Os cenários e telas de referência deste case foram sintetizados a partir do material de pesquisa fornecido e não representam um produto em produção.</p>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_B — DESAFIO</span>
+    <h2>Unificar sem limitar</h2>
+    <p>O desafio foi estruturar uma experiência que reduzisse a troca entre ferramentas sem transformar todos os jogos em uma ficha genérica. A solução precisava ser rápida para quem joga, configurável para quem cria sistemas e compreensível para pessoas com diferentes níveis de familiaridade com regras digitais.</p>
+    <blockquote class="case-quote">Como oferecer uma ficha pronta para jogar e, ao mesmo tempo, liberdade para que cada sistema mantenha sua identidade?</blockquote>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_C — OBJETIVOS</span>
+    <h2>O que a solução precisava entregar</h2>
+    <ul>
+      <li>Centralizar personagens de sistemas diferentes em uma biblioteca pesquisável.</li>
+      <li>Reduzir o tempo de criação com templates e orientação por etapas.</li>
+      <li>Facilitar consultas e rolagens durante a sessão, inclusive sem conexão.</li>
+      <li>Permitir que mestres configurem campos, fórmulas e identidade visual sem programar.</li>
+      <li>Dar previsibilidade à evolução das fichas e à preservação dos dados.</li>
+    </ul>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_D — PROCESSO</span>
+    <h2>Do problema ao fluxo de produto</h2>
+    <p>O processo foi organizado em quatro fases, conectando levantamento de necessidades, arquitetura, prototipação e avaliação preliminar.</p>
+
+    <div class="phase" data-phase="PHASE_01 // DESCOBRIR">
+      <h3>Investigar a rotina</h3>
+      <p>O material do projeto reúne benchmark de ferramentas de ficha e organização, entrevistas qualitativas com oito pessoas e uma pesquisa quantitativa sobre hábitos multi-sistema, criação de homebrew e fricções com aplicativos existentes.</p>
+      <div class="insight-strip"><b>INSIGHT</b><span>O valor não está apenas em armazenar uma ficha, mas em apoiar sua criação e consulta no contexto real de jogo.</span></div>
+    </div>
+
+    <div class="phase" data-phase="PHASE_02 // DEFINIR">
+      <h3>Organizar a experiência</h3>
+      <p>A arquitetura separa biblioteca, criação, detalhe da ficha e ferramentas de sessão. A Forja de Sistemas recebe destaque próprio por ser a proposta de maior diferenciação; o rolador aparece tanto como área independente quanto como recurso contextual.</p>
+      <div class="flow-line"><span>HOME</span><i>→</i><span>FICHAS</span><i>→</i><span>DETALHE</span><i>→</i><span>AÇÃO À MESA</span></div>
+    </div>
+
+    <div class="phase" data-phase="PHASE_03 // DESENVOLVER">
+      <h3>Prototipar com orientação</h3>
+      <p>O fluxo de criação combina templates prontos com um editor progressivo. Primeiro o usuário define o sistema e a ficha; em seguida, pode configurar campos, seções, fórmulas e tema visual. A prévia acompanha as alterações para tornar o resultado compreensível antes de publicar.</p>
+      <div class="feature-grid">
+        <div><b>01 / TEMPLATE</b><span>Começar com uma estrutura conhecida.</span></div>
+        <div><b>02 / CAMPOS</b><span>Adicionar tipos e seções passo a passo.</span></div>
+        <div><b>03 / PRÉVIA</b><span>Conferir a ficha enquanto configura.</span></div>
+      </div>
+    </div>
+
+    <div class="phase" data-phase="PHASE_04 // TESTAR">
+      <h3>Avaliar o fluxo principal</h3>
+      <p>O material registra um teste de usabilidade com cinco participantes, usando protótipo e sessões presenciais. As tarefas cobriram criação de ficha, edição de atributo e configuração de um sistema próprio; as dificuldades observadas orientaram templates iniciais, maior visibilidade para edição e explicações contextuais dos campos.</p>
+    </div>
+  </section>
+
+  <section class="block reveal" id="wireframes">
+    <span class="block-code">// SEC_E — WIREFRAMES</span>
+    <h2>Estrutura antes do acabamento</h2>
+    <p>Os wireframes organizam a jornada principal e validam hierarquia, navegação e ações antes da camada visual. As 13 telas estão agrupadas em lotes de seis para facilitar a leitura.</p>
+    <div class="screen-gallery" data-screen-gallery="wireframes" data-prefix="wf-" data-title="WIREFRAME" data-count="13"></div>
+  </section>
+
+  <section class="block reveal" id="design-final">
+    <span class="block-code">// SEC_F — DESIGN FINAL</span>
+    <h2>Uma ficha para cada sistema</h2>
+    <p>A interface transforma a estrutura em uma experiência mobile com biblioteca multi-sistema, criação guiada e recursos de mesa. A identidade de cada jogo pode variar sem perder consistência nos fluxos essenciais.</p>
+    <div class="feature-grid final-features">
+      <div><b>BIBLIOTECA</b><span>Personagens e sistemas reunidos em um só lugar.</span></div>
+      <div><b>USO À MESA</b><span>Ficha, atributos e rolagens acessíveis no fluxo de jogo.</span></div>
+      <div><b>CRIAÇÃO</b><span>Campos e fórmulas configuráveis por mestres.</span></div>
+      <div><b>PERSONALIZAÇÃO</b><span>Identidade visual própria para cada sistema.</span></div>
+    </div>
+    <div class="screen-gallery" data-screen-gallery="design-final" data-prefix="design-final-" data-title="DESIGN FINAL" data-count="13"></div>
+  </section>
+
+  <div class="gallery-modal" id="designModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria de telas da FORJA">
+    <div class="gallery-modal-panel">
+      <div class="gallery-meta" id="galleryMeta">CASE_03 // CENÁRIO_ANTERIOR</div>
+      <button class="gallery-close" type="button" aria-label="Fechar imagem">✕</button>
+      <button class="gallery-nav gallery-prev" type="button" aria-label="Imagem anterior">←</button>
+      <div class="gallery-counter" id="galleryCounter">01 / 03</div>
+      <img id="galleryImage" src="" alt="Reconstrução conceitual ampliada do cenário anterior">
+      <button class="gallery-nav gallery-next" type="button" aria-label="Próxima imagem">→</button>
+    </div>
+  </div>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_G — RESULTADOS</span>
+    <h2>O que a avaliação indicou</h2>
+    <p>Os números abaixo são resultados de avaliação de protótipo documentados no material do projeto, não métricas de um produto lançado. A amostra de cinco participantes é pequena; portanto, os dados servem como sinais para priorização, não como evidência de impacto em escala.</p>
+    <div class="results">
+      <div class="result"><b>100%</b><span>Conclusão da tarefa de criar uma ficha de D&amp;D no teste.</span></div>
+      <div class="result"><b>80%</b><span>Sucesso ao localizar e editar um atributo.</span></div>
+      <div class="result"><b>60%</b><span>Sucesso ao configurar sistema próprio; fluxo apontado para simplificação.</span></div>
+      <div class="result"><b>82/100</b><span>SUS registrado no material como avaliação de usabilidade do conceito.</span></div>
+    </div>
+    <div class="insight-strip"><b>PRÓXIMA ITERAÇÃO</b><span>Reduzir a carga inicial do editor com modelos prontos e explicar o impacto de cada tipo de campo antes da configuração.</span></div>
+  </section>
+
+  <section class="block reveal">
+    <span class="block-code">// SEC_H — APRENDIZADOS</span>
+    <h2>Flexibilidade precisa de orientação</h2>
+    <p>O principal aprendizado foi que personalização e simplicidade não são objetivos opostos, desde que a complexidade apareça no momento certo. Templates, pré-visualização e explicações contextuais ajudam a transformar liberdade de configuração em uma sequência de decisões menores.</p>
+    <p>Também ficou claro que o contexto da mesa deve orientar a hierarquia da interface: atributos, recursos e ações frequentes precisam ser acessíveis sem navegar por uma estrutura extensa. Para uma próxima etapa, o conceito exigiria validação com mais perfis e cenários reais, além de definição técnica para sincronização offline e proteção dos dados.</p>
+  </section>
+
+  <section class="block reveal final-block">
+    <span class="block-code">// END_OF_FILE</span>
+    <h2>Obrigado!</h2>
+    <p>A FORJA explora como uma ferramenta de produto pode tornar fichas de RPG mais acessíveis sem apagar as particularidades de cada sistema. Obrigado por acompanhar o processo. Estou aberto a conversar sobre decisões de UX, prototipação e design de produto.</p>
+    <div class="tags final-tags">
+      <span>FORJA · CONCEITO DE PRODUTO</span>
+      <span>UX/UI · DESIGN DE PRODUTO</span>
+      <span>DESIGN: LUCAS BRUNINI</span>
+    </div>
+  </section>
+
+  <nav class="case-nav reveal" aria-label="Navegação do case">
+    <a href="../../index.html#projetos"><span>// BACK</span><b>Voltar aos cases</b></a>
+    <a class="next" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20o%20case%20FORJA%20no%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer"><span>// CONTATO</span><b>Falar com Lucas</b></a>
+  </nav>
+</main>
+
+<footer class="case-footer">
+  <span class="info">© 2026 LUCAS BRUNINI — SÃO PAULO // BR</span>
+  <a class="cta" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20o%20case%20FORJA%20no%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer">VAMOS CONVERSAR ↗</a>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var modal = document.getElementById('designModal');
+  var modalImage = document.getElementById('galleryImage');
+  var counter = document.getElementById('galleryCounter');
+  var meta = document.getElementById('galleryMeta');
+  var closeButton = document.querySelector('.gallery-close');
+  var previousButton = document.querySelector('.gallery-prev');
+  var nextButton = document.querySelector('.gallery-next');
+  var gallerySets = {};
+  var activeCards = [];
+  var activeTitle = '';
+  var currentIndex = 0;
+  var lastTrigger = null;
+
+  document.querySelectorAll('[data-screen-gallery]').forEach(function(gallery){
+    var key = gallery.getAttribute('data-screen-gallery');
+    var prefix = gallery.getAttribute('data-prefix');
+    var title = gallery.getAttribute('data-title');
+    var count = Number(gallery.getAttribute('data-count'));
+    var cards = [];
+
+    for(var start = 1; start <= count; start += 6){
+      var end = Math.min(start + 5, count);
+      var batch = document.createElement('div');
+      var batchTitle = document.createElement('h3');
+      var grid = document.createElement('div');
+      batch.className = 'screen-batch';
+      batchTitle.textContent = start === end
+        ? 'TELA ' + String(start).padStart(2, '0')
+        : 'TELAS ' + String(start).padStart(2, '0') + '-' + String(end).padStart(2, '0');
+      grid.className = 'screen-grid';
+      batch.appendChild(batchTitle);
+      batch.appendChild(grid);
+
+      for(var number = start; number <= end; number++){
+        var sequence = String(number).padStart(2, '0');
+        var label = title + '_' + sequence;
+        var button = document.createElement('button');
+        var image = document.createElement('img');
+        var caption = document.createElement('span');
+        button.type = 'button';
+        button.className = 'screen-card gallery-trigger';
+        button.setAttribute('data-gallery', key);
+        button.setAttribute('data-full', '../../assets/imagens/forja/' + prefix + sequence + '.png');
+        button.setAttribute('data-label', label);
+        button.setAttribute('aria-label', 'Ampliar ' + title.toLowerCase() + ' ' + sequence);
+        image.src = '../../assets/imagens/forja/' + prefix + sequence + '.png';
+        image.alt = title + ' ' + sequence + ' do projeto FORJA';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        caption.className = 'screen-caption';
+        caption.textContent = label;
+        button.appendChild(image);
+        button.appendChild(caption);
+        grid.appendChild(button);
+        cards.push(button);
+      }
+
+      gallery.appendChild(batch);
+    }
+
+    gallerySets[key] = cards;
+  });
+
+  function updateGallery(){
+    if(!activeCards.length) return;
+    var card = activeCards[currentIndex];
+    modalImage.src = card.getAttribute('data-full');
+    modalImage.alt = card.querySelector('img').alt;
+    meta.textContent = 'CASE_03 // ' + activeTitle + ' // ' + card.getAttribute('data-label').split('_').pop();
+    counter.textContent = String(currentIndex + 1).padStart(2, '0') + ' / ' + String(activeCards.length).padStart(2, '0');
+  }
+
+  function openGallery(index){
+    if(!modal || !activeCards.length) return;
+    currentIndex = (index + activeCards.length) % activeCards.length;
+    updateGallery();
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  }
+
+  function closeGallery(){
+    if(!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if(lastTrigger) lastTrigger.focus();
+  }
+
+  Object.keys(gallerySets).forEach(function(key){
+    gallerySets[key].forEach(function(card, index){
+      card.addEventListener('click', function(){
+        lastTrigger = card;
+        activeCards = gallerySets[key];
+        activeTitle = card.getAttribute('data-label').replace(/_\d+$/, '');
+        openGallery(index);
+      });
+    });
+  });
+
+  closeButton.addEventListener('click', closeGallery);
+  previousButton.addEventListener('click', function(){ openGallery(currentIndex - 1); });
+  nextButton.addEventListener('click', function(){ openGallery(currentIndex + 1); });
+  modal.addEventListener('click', function(event){
+    if(event.target === modal) closeGallery();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if(!modal.classList.contains('is-open')) return;
+    if(event.key === 'Escape') closeGallery();
+    if(event.key === 'ArrowLeft') openGallery(currentIndex - 1);
+    if(event.key === 'ArrowRight') openGallery(currentIndex + 1);
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: .1});
+  document.querySelectorAll('.reveal').forEach(function(element){ observer.observe(element); });
+})();
+</script>
+</body>
+</html>
