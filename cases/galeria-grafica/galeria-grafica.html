@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALERIA GRÁFICA ✦ LUCAS BRUNINI</title>
+  <meta name="description" content="Uma seleção de trabalhos de design gráfico de Lucas Brunini.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-700.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/syne@latest/latin-800.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap case-top">
+      <a class="back" href="../../index.html"><i aria-hidden="true">←</i> VOLTAR AO ÍNDICE</a>
+      <a class="logo" href="../../index.html"><b aria-hidden="true">▮</b> L.BRUNINI</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="case-hero">
+      <span class="case-code">// SELEÇÃO — DESIGN GRÁFICO</span>
+      <p class="update-notice">Esta página está sendo atualizada aos poucos com novos projetos.</p>
+      <h1>Galeria <span class="title-accent">Gráfica</span></h1>
+      <p class="desc">Uma seleção de trabalhos de design gráfico. Explore as peças e selecione uma imagem para visualizá-la em detalhes.</p>
+    </div>
+
+    <section class="gallery-section" aria-labelledby="pecas-graficas-titulo">
+      <div class="section-heading">
+        <span class="section-code">// TIPO_01</span>
+        <h2 id="pecas-graficas-titulo">Peças Gráficas</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button"
+            data-full="../../assets/imagens/galeria-grafica/peca-base-v5.png"
+            data-alt="Peça Base, versão 5"
+            aria-label="Ampliar Peça Base, versão 5">
+            <img src="../../assets/imagens/galeria-grafica/peca-base-v5.png" alt="Peça Base, versão 5" loading="lazy">
+            <span class="image-hud" aria-hidden="true">DESIGN GRÁFICO // PEÇA_01</span>
+            <span class="image-expand" aria-hidden="true">↗</span>
+          </button>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-trigger" type="button"
+            data-full="../../assets/imagens/galeria-grafica/peca-base-oficina-v1.png"
+            data-alt="Peça Base para oficina, versão 1"
+            aria-label="Ampliar Peça Base para oficina, versão 1">
+            <img src="../../assets/imagens/galeria-grafica/peca-base-oficina-v1.png" alt="Peça Base para oficina, versão 1" loading="lazy">
+            <span class="image-hud" aria-hidden="true">DESIGN GRÁFICO // PEÇA_02</span>
+            <span class="image-expand" aria-hidden="true">↗</span>
+          </button>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Visualização ampliada da imagem" inert>
+    <div class="gallery-modal-panel">
+      <div class="gallery-meta">GALERIA GRÁFICA // PEÇAS GRÁFICAS</div>
+      <button class="gallery-close" type="button" aria-label="Fechar visualização">✕</button>
+      <button class="gallery-nav gallery-prev" type="button" aria-label="Imagem anterior">←</button>
+      <div class="gallery-counter" id="galleryCounter" aria-live="polite"></div>
+      <img id="galleryImage" src="" alt="">
+      <button class="gallery-nav gallery-next" type="button" aria-label="Próxima imagem">→</button>
+    </div>
+  </div>
+
+  <footer class="wrap">© <span id="year"></span> // LUCAS BRUNINI · DESIGN GRÁFICO</footer>
+
+  <script>
+    (function(){
+      'use strict';
+
+      var modal = document.getElementById('galleryModal');
+      var modalImage = document.getElementById('galleryImage');
+      var counter = document.getElementById('galleryCounter');
+      var closeButton = document.querySelector('.gallery-close');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-trigger'));
+      var currentIndex = 0;
+      var lastTrigger = null;
+
+      function updateGallery(index) {
+        currentIndex = (index + cards.length) % cards.length;
+        modalImage.src = cards[currentIndex].getAttribute('data-full');
+        modalImage.alt = cards[currentIndex].getAttribute('data-alt');
+        counter.textContent = (currentIndex + 1).toString().padStart(2, '0') + ' / ' + cards.length.toString().padStart(2, '0');
+      }
+
+      function openGallery(index) {
+        if (!cards.length) return;
+        lastTrigger = cards[index];
+        updateGallery(index);
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        modal.inert = false;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+
+      function closeGallery() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.inert = true;
+        document.body.style.overflow = '';
+        if (lastTrigger) lastTrigger.focus();
+      }
+
+      cards.forEach(function(card, index) {
+        card.addEventListener('click', function(){ openGallery(index); });
+      });
+
+      closeButton.addEventListener('click', closeGallery);
+      document.querySelector('.gallery-prev').addEventListener('click', function(){ updateGallery(currentIndex - 1); });
+      document.querySelector('.gallery-next').addEventListener('click', function(){ updateGallery(currentIndex + 1); });
+
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) closeGallery();
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (modal.getAttribute('aria-hidden') === 'true') return;
+        if (event.key === 'Escape') closeGallery();
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          updateGallery(currentIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          updateGallery(currentIndex + 1);
+        }
+        if (event.key === 'Tab') {
+          var focusable = [closeButton, document.querySelector('.gallery-prev'), document.querySelector('.gallery-next')];
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
