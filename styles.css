@@ -846,8 +846,25 @@ body.loaded .hero-title .line > span {
   transition: color 0.25s ease;
 }
 
+.gallery-teaser h2 a::before {
+  content: "→";
+  display: inline-block;
+  margin-right: 0.55em;
+  color: var(--red);
+  font-family: var(--font-m);
+  font-size: 0.55em;
+  font-weight: 400;
+  vertical-align: 0.2em;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
 .gallery-teaser h2 a:hover {
   color: var(--red);
+}
+
+.gallery-teaser h2 a:hover::before,
+.gallery-teaser h2 a:focus-visible::before {
+  transform: translateX(4px);
 }
 
 .gallery-teaser .section-note {
