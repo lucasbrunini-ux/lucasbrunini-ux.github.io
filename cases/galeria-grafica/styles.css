@@ -210,9 +210,12 @@ header {
   cursor: zoom-in;
 }
 
+.gallery-trigger-pdf {
+  cursor: pointer;
+}
+
 .gallery-trigger img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: contain;
   transition: transform 0.8s var(--ease);
 }
@@ -254,6 +257,12 @@ header {
 .gallery-trigger:focus-visible .image-expand {
   opacity: 1;
   transform: none;
+}
+
+.gallery-caption {
+  padding: 0.75rem 0.9rem;
+  color: var(--mut);
+  font-size: 0.9rem;
 }
 
 .gallery-modal {
