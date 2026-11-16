@@ -624,6 +624,17 @@
   text-align: center;
 }
 
+.final-block .block-code,
+.final-block h2,
+.final-block p {
+  text-align: center;
+}
+
+.final-block p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .final-block .block-code {
   text-align: center;
 }

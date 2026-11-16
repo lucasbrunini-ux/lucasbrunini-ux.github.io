@@ -12,22 +12,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/indice-flutuante.css">
 </head>
 <body>
 
 <div class="noise" aria-hidden="true"></div>
 <div class="scanlines" aria-hidden="true"></div>
-
-<div id="preloader" aria-hidden="true">
-  <div class="pre-top"><span>BRUNINI.SYS <b>v2.0</b></span><span>SÃO PAULO // BR — 23°33'S 46°38'W</span></div>
-  <div class="boot-log" id="bootLog">
-    <span>&gt; INITIALIZING PORTFOLIO.SYS ...</span>
-    <span>&gt; LOADING PROJECTS [UX/UI · PRODUTO · EDITORIAL] ... OK</span>
-    <span>&gt; CALIBRATING GRID ... OK</span>
-    <span>&gt; STATUS: <b style="color:var(--green)">ONLINE</b></span>
-  </div>
-  <div class="pre-count" id="preCount">0<em>%</em></div>
-</div>
 
 <header id="header">
   <div class="wrap nav">
@@ -69,7 +59,11 @@
           <span class="line"><span>GRÁFICO</span></span>
           <span class="line"><span class="red">PRODUTO<span class="caret"></span></span></span>
         </h1>
-        <p class="hero-sub"><b>Sou <b>UX/UI Designer</b> que trabalha para <b>transformar problemas em experiências mais claras, rápidas e úteis para usuário e negócio</b>. Trabalho no encontro entre <b>pesquisa, estratégia, arquitetura da informação, interface e comunicação visual</b>, criando soluções que equilibram <b>usabilidade, clareza comercial e consistência de marca.</b> Confira abaixo mais sobre minha história profissional e fique a vontade em me contatar para saber mais!</b></p>
+        <p class="hero-sub">Sou <b>UX/UI Designer com formação em Análise e Desenvolvimento de Sistemas</b>. Meu diferencial é unir pesquisa, estratégia de produto e visão técnica para criar experiências claras, viáveis e alinhadas às necessidades de usuários e negócio.</p>
+        <div class="hero-actions">
+          <a class="mail-btn" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" aria-label="Falar com Lucas pelo WhatsApp">Vamos conversar <span aria-hidden="true">↗</span></a>
+          <a class="download-button hero-download" href="assets/documentos/Curriculo_Lucas_Brunini_UX_UI.pdf" download aria-label="Baixar currículo de Lucas Brunini em PDF">📄 Baixar Currículo (PDF)</a>
+        </div>
         <div class="hero-hud">
           <div class="hud-cell">LOC<b>SÃO PAULO // BR</b></div>
           <div class="hud-cell">STATUS<b class="g">● DISPONÍVEL</b></div>
@@ -77,9 +71,9 @@
           <div class="hud-cell">PRINCIPAIS HABILIDADES<b class="r">UX RESEARCH · FIGMA · DESIGN SYSTEMS · DESIGN GRÁFICO </b></div>
         </div>
         <div class="contact-grid reveal" style="--d:.2s">
-          <a>EMAIL<b>brunini.lucas@gmail.com</b></a>
-          <a href="https://wa.me/5511959798798" target="_blank" rel="noopener noreferrer">TEL (WHATS APP)<b>(11) 95979-8798</b></a>
-          <a href="https://linkedin.com/in/lucasbrunini" target="_blank" rel="noopener">LINKEDIN<b>/in/lucasbrunini ↗</b></a>
+          <a href="mailto:brunini.lucas@gmail.com">EMAIL<b>brunini.lucas@gmail.com</b></a>
+          <a href="https://wa.me/5511959798798" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Lucas pelo WhatsApp"><span>TEL (WHATSAPP)</span><b>(11) 95979-8798</b></a>
+          <a href="https://linkedin.com/in/lucasbrunini" target="_blank" rel="noopener noreferrer" aria-label="Acessar o perfil de Lucas Brunini no LinkedIn">LINKEDIN<b>/in/lucasbrunini ↗</b></a>
         </div>
 
       </div>
@@ -115,7 +109,7 @@
 
       <div class="projects">
         <article class="project reveal" data-cat="uxui design-grafico branding">
-          <a class="project-media hover-video-card" href="cases/redesign-smartool/redesign-smartool.html" aria-label="Redesign Site Smartool">
+          <a class="project-media hover-video-card" href="cases/redesign-smartool/redesign-smartool.html" aria-label="Ver detalhes do projeto Redesign Site Smartool">
             <img src="assets/imagens/redesign-smartool/capa-redesign-smartool.png" alt="Capa do projeto Redesign Site Smartool" loading="lazy">
             <span class="pm-hud"><span>PROJETO_01 // REDESIGN_SMARTOOL</span><span class="r">PROJETO ●</span></span>
             <span class="pm-arrow">↗</span>
@@ -126,14 +120,14 @@
               <span class="project-type"><span class="project">TIPO: SITE</span><br>2026</span>
             </div>
             <h3>Redesign Site Smartool</h3>
-            <p>Reestruturei o site da Smartool para reforçar sua proposta de valor, modernizar sua abordabem visual e transformar a narrativa institucional em uma experiência tecnológica mais premium e de alto impacto.</p>
+            <p><strong>Contexto:</strong> o site anterior não refletia a maturidade da Smartool em tecnologia interativa. <strong>Minha ação:</strong> reestruturei a narrativa, a arquitetura da informação e a interface para tornar serviços e diferenciais mais fáceis de entender. <strong>Resultado:</strong> Arquitetura organizada dando mais clareza e credibilidade para a marca.
             <div class="tags"><span>UX/UI</span><span>BRANDING</span><span>DESIGN SYSTEM</span></div>
           </div>
         </article>
 
         <article class="project reveal" data-cat="uxui design-grafico design-produto">
-          <a class="project-media hover-video-card" href="cases/totem-fotos/totem-fotos.html" aria-label="Totem de Fotos Interativo">
-            <video class="hover-video" muted playsinline preload="auto" loop poster="assets/imagens/totem-fotos/totem-fotos-capa.png" aria-label="Vídeo de capa do Totem de Fotos Interativo">
+          <a class="project-media hover-video-card" href="cases/totem-fotos/totem-fotos.html" aria-label="Ver detalhes do projeto Totem de Fotos Interativo">
+            <video class="hover-video" muted playsinline preload="metadata" loop poster="assets/imagens/totem-fotos/totem-fotos-capa.png" aria-hidden="true">
               <source src="assets/videos/totem de fotos/totem-fotos-capa.mp4" type="video/mp4">
             </video>
             <span class="pm-hud"><span>PROJETO_02 // TOTEM_FOTOS</span><span class="r">PROJETO ●</span></span>
@@ -145,13 +139,13 @@
               <span class="project-type"><span class="project">TIPO: PROJETO</span><br>2025</span>
             </div>
             <h3>Totem de Fotos Interativo</h3>
-            <p>Reestruturei uma experiência de captura e compartilhamento para eventos que reduziu a fricção do momento, aumentou o tempo de permanência no estande e transformou a interação em uma memória compartilhável e de marca.</p>
+            <p><strong>Contexto:</strong> ativações em eventos precisavam transformar interações rápidas em experiências memoráveis. <strong>Minha ação:</strong> reorganizei o fluxo de captura, personalização visual e compartilhamento do totem. <strong>Resultado:</strong> diversas marcas atendidas: Santos FC, Corinthians Basquete, Chiquititas, Hello Kitty e muitas outras. Tornando-se uma solução versátil e impactante para ativações de marca.</p>
             <div class="tags"><span>UX/UI</span><span>DESIGN GRÁFICO</span><span>DESIGN DE PRODUTO</span></div>
           </div>
         </article>
 
         <article class="project reveal" data-cat="uxui design-produto">
-          <a class="project-media" href="cases/forja/forja.html" aria-label="Abrir case FORJA — sistema de fichas para RPG">
+          <a class="project-media" href="cases/forja/forja.html" aria-label="Ver detalhes do projeto FORJA, sistema de fichas para RPG">
             <img src="assets/imagens/forja/forja-capa.png" alt="Capa da FORJA com a interface mobile do gerenciador de fichas de RPG" loading="lazy">
             <span class="pm-hud"><span>PROJETO_03 // FORJA_RPG</span><span class="r">CASE ●</span></span>
             <span class="pm-arrow">↗</span>
@@ -162,7 +156,7 @@
               <span class="project-type"><span class="study">TIPO: CASE</span><br>2026</span>
             </div>
             <h3>FORJA — fichas de RPG</h3>
-            <p>Conceito de uma plataforma que reúne fichas de diferentes sistemas e permite a mestres criar experiências próprias, com foco em autonomia, leitura rápida e uso durante a sessão.</p>
+            <p><strong>Contexto:</strong> jogadores alternam entre aplicativos, planilhas e PDFs, enquanto criadores de sistemas próprios precisam de ferramentas flexíveis. <strong>Minha ação:</strong> concebi uma biblioteca multi-sistema com editor guiado, automações e recursos para uso à mesa. <strong>Resultado:</strong> protótipo conceitual estruturado; validação com usuários e métricas trouceram insights valiosos que ainda serão implementados futuramente.</p>
             <div class="tags"><span>UX/UI</span><span>DESIGN DE PRODUTO</span><span>PROTOTIPAGEM</span></div>
           </div>
         </article>
@@ -261,7 +255,9 @@
             <h3>Cotton On Group</h3>
             <span class="role">GERENTE DE EQUIPE</span>
             <ul>
-              <li>liderança de equipe e gestão de operações logísticas, administrativas e financeiras com foco em jornada do cliente, eficiência e experiência de atendimento.</li>
+              <li>Liderei operações com foco na jornada do cliente, identificando pontos de atrito e oportunidades para melhorar a experiência de atendimento em períodos de alta demanda.</li>
+              <li>Coordenei prioridades e alinhei expectativas entre equipe, clientes e stakeholders para manter uma comunicação clara e uma operação consistente.</li>
+              <li>Desenvolvi comunicação assertiva, gestão de expectativas e tomada de decisão em um ambiente dinâmico e orientado ao cliente.</li>
             </ul>
           </div>
         </div>
@@ -293,12 +289,10 @@
       </div>
       <div class="skills-grid">
         <div class="reveal">
-          <div class="skill" data-lv="9"><span class="sk-name">FIGMA</span><span class="sk-bar"></span><span class="sk-val">90%</span></div>
-          <div class="skill" data-lv="9"><span class="sk-name">UX RESEARCH</span><span class="sk-bar"></span><span class="sk-val">90%</span></div>
-          <div class="skill" data-lv="8"><span class="sk-name">DESIGN SYSTEMS</span><span class="sk-bar"></span><span class="sk-val">85%</span></div>
-          <div class="skill" data-lv="8"><span class="sk-name">PHOTOSHOP</span><span class="sk-bar"></span><span class="sk-val">80%</span></div>
-          <div class="skill" data-lv="8"><span class="sk-name">ILLUSTRATOR</span><span class="sk-bar"></span><span class="sk-val">80%</span></div>
-          <div class="skill" data-lv="7"><span class="sk-name">INDESIGN</span><span class="sk-bar"></span><span class="sk-val">70%</span></div>
+          <div class="cap-group">
+            <h4><i>//</i> FERRAMENTAS</h4>
+            <div class="tags skill-tags"><span>FIGMA</span><span>FIGJAM</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>INDESIGN</span><span>AFTER EFFECTS</span><span>PREMIERE PRO</span><span>NOTION</span></div>
+          </div>
         </div>
         <div class="reveal" style="--d:.1s">
           <div class="cap-group">
@@ -372,58 +366,16 @@
 </main>
 
 <!-- SEC_07 CONTATO -->
-<footer id="contato" class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:0">
-      <span class="sec-code">// SEC_06</span>
-      <span class="sec-meta">CANAL DE TRANSMISSÃO ABERTO</span>
-    </div>
-    <h2 class="footer-title reveal" style="--d:.08s">QUER CRIAR<br><span class="red">COM UX?</span></h2>
-    <a class="mail-btn reveal" style="--d:.16s" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">VAMOS CONVERSAR <span>↗</span></a>
-
-    <!--<div class="contact-grid reveal" style="--d:.2s">
-      <a href="mailto:brunini.lucas@gmail.com">EMAIL<b>brunini.lucas@gmail.com</b></a>
-      <a href="tel:+5511959798798">TEL<b>(11) 95979-8798</b></a>
-      <a href="https://linkedin.com/in/lucasbrunini" target="_blank" rel="noopener">LINKEDIN<b>/in/lucasbrunini ↗</b></a>
-    </div>-->
-
-    <div class="footer-bar">
-      <span>© <span id="ano">2025</span> LUCAS BRUNINI — TODOS OS DIREITOS RESERVADOS</span>
-      <span>SÃO PAULO // BR — 23°33'S 46°38'W</span>
-      <button id="topo">VOLTAR AO TOPO ↑</button>
-    </div>
-  </div>
-  <span class="footer-ghost" aria-hidden="true">LB</span>
+<footer id="contato" class="site-footer">
+  <span class="info">© <span id="ano"></span> LUCAS BRUNINI — SÃO PAULO // BR</span>
+  <a class="cta" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">VAMOS CONVERSAR <span aria-hidden="true">↗</span></a>
+  <span class="plus bl" aria-hidden="true">+</span>
+  <span class="plus br" aria-hidden="true">+</span>
 </footer>
 
 <script>
 (function(){
   'use strict';
-
-  var pre = document.getElementById('preloader');
-  var preCount = document.getElementById('preCount');
-  var bootLines = document.querySelectorAll('#bootLog span');
-  var t0 = null, DUR = 1400;
-  function tick(ts){
-    if(!t0) t0 = ts;
-    var p = Math.min((ts - t0)/DUR, 1);
-    var eased = 1 - Math.pow(1 - p, 3);
-    var pct = Math.round(eased * 100);
-    preCount.innerHTML = pct + '<em>%</em>';
-    bootLines.forEach(function(l, i){
-      if(pct > (i + 1) * 22) l.classList.add('on');
-    });
-    if(p < 1){ requestAnimationFrame(tick); }
-    else{
-      bootLines.forEach(function(l){ l.classList.add('on'); });
-      setTimeout(function(){
-        pre.classList.add('done');
-        document.body.classList.add('loaded');
-        setTimeout(function(){ pre.remove(); }, 900);
-      }, 250);
-    }
-  }
-  requestAnimationFrame(tick);
 
   var header = document.getElementById('header');
   addEventListener('scroll', function(){
@@ -512,16 +464,6 @@
     card.addEventListener('focusout', pauseVideo);
   });
 
-  document.querySelectorAll('.skill').forEach(function(sk){
-    var lv = +sk.dataset.lv || 0;
-    var bar = sk.querySelector('.sk-bar');
-    for(var i = 0; i < 10; i++){
-      var cell = document.createElement('i');
-      if(i < lv) cell.classList.add('on');
-      bar.appendChild(cell);
-    }
-  });
-
   var navMap = {};
   document.querySelectorAll('[data-nav]').forEach(function(a){ navMap[a.dataset.nav] = a; });
   var nio = new IntersectionObserver(function(entries){
@@ -539,10 +481,8 @@
   });
 
   document.getElementById('ano').textContent = new Date().getFullYear();
-  document.getElementById('topo').addEventListener('click', function(){
-    scrollTo({top:0, behavior:'smooth'});
-  });
 })();
 </script>
+<script src="assets/indice-flutuante.js"></script>
 </body>
 </html>
