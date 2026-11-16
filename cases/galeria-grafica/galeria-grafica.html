@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/latin-500.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono@latest/latin-400.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../assets/indice-flutuante.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -131,7 +132,12 @@
     </div>
   </div>
 
-  <footer class="wrap">© <span id="year"></span> // LUCAS BRUNINI · DESIGN GRÁFICO</footer>
+  <footer class="site-footer">
+    <span class="info">© <span id="year"></span> LUCAS BRUNINI — SÃO PAULO // BR</span>
+    <a class="cta" href="https://wa.me/5511959798798?text=Ol%C3%A1%20Lucas%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">VAMOS CONVERSAR <span aria-hidden="true">↗</span></a>
+    <span class="plus bl" aria-hidden="true">+</span>
+    <span class="plus br" aria-hidden="true">+</span>
+  </footer>
 
   <script>
     (function(){
@@ -213,5 +219,6 @@
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
+  <script src="../../assets/indice-flutuante.js"></script>
 </body>
 </html>
